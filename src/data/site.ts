@@ -35,10 +35,10 @@ export const site = {
     "Karaköy'de tek kişilik özel stüdyo. Fine line, mikro realizm, blackwork ve geometrik çalışmalar.",
 
   contact: {
-    phone: "+90 212 555 04 18",
-    phoneDisplay: "+90 212 555 04 18",
-    whatsapp: "+90 532 555 04 18",
-    whatsappDisplay: "+90 532 555 04 18",
+    phone: "+90 533 431 53 48",
+    phoneDisplay: "+90 533 431 53 48",
+    whatsapp: "+90 533 431 53 48",
+    whatsappDisplay: "+90 533 431 53 48",
     email: "merhaba@emirketenci.com",
     pressEmail: "basin@emirketenci.com",
   },
