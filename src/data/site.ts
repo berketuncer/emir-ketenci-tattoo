@@ -12,8 +12,16 @@ export const site = {
   legalName: "Emir Ketenci Dövme Stüdyosu",
   shortName: "EK",
   descriptor: "Dövme ve Tasarım",
-  domain: "emirketenci.com",
-  url: "https://www.emirketenci.com",
+  /**
+   * Yayındaki adres. Gerçek alan adı bağlandığında burayı değiştirmek yeterli;
+   * canonical, sitemap, robots ve Open Graph adresleri buradan türetilir.
+   * Ortam değişkeniyle de geçersiz kılınabilir: NEXT_PUBLIC_SITE_URL
+   */
+  domain: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://emir-ketenci-tattoo.vercel.app").replace(
+    /^https?:\/\//,
+    "",
+  ),
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://emir-ketenci-tattoo.vercel.app",
   locale: "tr_TR",
   /** Stüdyonun açıldığı yıl. */
   founded: 2019,
