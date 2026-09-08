@@ -14,7 +14,7 @@ import { breadcrumbSchema, pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Randevu Talebi",
   description:
-    "Beş kısa adımda dövme fikrinizi anlatın. Talebinizi 48 saat içinde değerlendirip size özel bir öneri ve fiyat aralığıyla dönüyorum.",
+    "Dövme fikrinizi kısa bir formda anlatın, WhatsApp'tan bana gönderin. Talebinizi 48 saat içinde değerlendirip size özel bir öneri ve fiyat aralığıyla dönüyorum.",
   path: "/randevu",
 });
 
@@ -31,8 +31,8 @@ const assurances = [
   },
   {
     Icon: WhatsApp,
-    title: "Formu doldurmak istemiyorsanız",
-    text: "WhatsApp'tan tek cümleyle de yazabilirsiniz; süreci oradan da yürütebiliriz.",
+    title: "Talep doğrudan telefonuma düşer",
+    text: "Form sizi WhatsApp'a taşır; referans görsellerinizi de aynı sohbete ekleyebilirsiniz.",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function BookingPage() {
             <span className="block italic text-ash">gerisini birlikte çizelim.</span>
           </>
         }
-        description="Beş kısa adım, ortalama üç dakika. Net bir fikriniz olması gerekmiyor — ne istemediğinizi bilmek bile başlamak için yeterli."
+        description="Altı soru, bir dakika. Yazdıklarınız hazır bir WhatsApp mesajına dönüşür; göndermeden önce dilediğiniz gibi düzenleyebilirsiniz."
         crumbs={[{ label: "Ana Sayfa", href: "/" }, { label: "Randevu Talebi" }]}
       />
 
@@ -138,8 +138,8 @@ export default function BookingPage() {
                 </div>
 
                 <p className="mt-8 text-xs leading-relaxed text-ash-deep">
-                  Bu bir demo sitedir; form gönderimi kaydedilmez ve yüklenen görseller
-                  tarayıcınızdan çıkmaz.
+                  Form hiçbir bilgiyi sitede saklamaz; yazdıklarınız yalnızca sizin
+                  gönderdiğiniz WhatsApp mesajına dönüşür.
                 </p>
               </Reveal>
             </aside>
