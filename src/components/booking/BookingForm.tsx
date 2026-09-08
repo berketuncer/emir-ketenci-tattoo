@@ -2,45 +2,61 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { RadioCards, SelectField, TextAreaField, TextField } from "./Fields";
 import { ArrowRight, WhatsApp } from "@/components/ui/Icons";
-import { budgets, placements, projectTypes, sizes } from "@/data/booking";
+import {
+  experienceOptions,
+  palettes,
+  placements,
+  projectTypes,
+  sizes,
+  timePreferences,
+} from "@/data/booking";
 import { site, whatsappLink } from "@/data/site";
 import { styles } from "@/data/styles";
 
 type Values = {
-  name: string;
   projectType: string;
-  style: string;
   idea: string;
+  style: string;
+  referenceNotes: string;
   placement: string;
   size: string;
-  budget: string;
+  palette: string;
+  name: string;
+  experience: string;
+  timePreference: string;
 };
 
 const emptyValues: Values = {
-  name: "",
   projectType: "",
-  style: "",
   idea: "",
+  style: "",
+  referenceNotes: "",
   placement: "",
   size: "",
-  budget: "",
+  palette: "",
+  name: "",
+  experience: "",
+  timePreference: "",
 };
 
 type Errors = Partial<Record<keyof Values, string>>;
+
+const styleOptions = styles.map((item) => ({ value: item.slug, label: item.name }));
 
 const labelOf = (options: ReadonlyArray<{ value: string; label: string }>, value: string) =>
   options.find((option) => option.value === value)?.label ?? value;
 
 function validate(values: Values): Errors {
   const errors: Errors = {};
-  if (!values.name.trim()) errors.name = "İsminizi yazın.";
   if (!values.projectType) errors.projectType = "Ne yaptırmak istediğinizi seçin.";
   if (values.idea.trim().length < 20) errors.idea = "Fikri biraz daha anlatın — en az 20 karakter.";
   if (!values.placement) errors.placement = "Bölge seçin.";
   if (!values.size) errors.size = "Yaklaşık ölçü seçin.";
+  if (!values.palette) errors.palette = "Siyah-gri mi, renkli mi?";
+  if (!values.name.trim()) errors.name = "İsminizi yazın.";
   return errors;
 }
 
@@ -48,6 +64,9 @@ function validate(values: Values): Errors {
  * Alanları okunabilir bir WhatsApp mesajına çevirir. Form bir sunucuya
  * gitmediği için talep, ziyaretçinin kendi WhatsApp'ından gönderdiği bu
  * mesajla doğrudan stüdyonun telefonuna düşer.
+ *
+ * Fiyat sorulmaz: kesin rakam ancak fikir, ölçü ve bölge görüldükten sonra
+ * çıkar; baştan aralık sormak yanlış bir çapa atar.
  */
 function buildMessage(values: Values): string {
   const lines = [
@@ -62,10 +81,30 @@ function buildMessage(values: Values): string {
 
   lines.push(`Bölge: ${labelOf(placements, values.placement)}`);
   lines.push(`Ölçü: ${labelOf(sizes, values.size)}`);
-  if (values.budget) lines.push(`Bütçe: ${labelOf(budgets, values.budget)}`);
+  lines.push(`Palet: ${labelOf(palettes, values.palette)}`);
+
+  if (values.experience) lines.push(`Deneyim: ${labelOf(experienceOptions, values.experience)}`);
+  if (values.timePreference) lines.push(`Ne zaman: ${labelOf(timePreferences, values.timePreference)}`);
 
   lines.push("", `Fikir: ${values.idea.trim()}`);
+  if (values.referenceNotes.trim()) lines.push("", `İlham / referans: ${values.referenceNotes.trim()}`);
+
   return lines.join("\n");
+}
+
+/** Form içindeki başlıklı bölüm — sorular üç grupta toplanır. */
+function Group({ title, step, children }: { title: string; step: string; children: ReactNode }) {
+  return (
+    <fieldset className="border-t border-[var(--hairline)] pt-8">
+      <legend className="sr-only">{title}</legend>
+      <p aria-hidden className="type-eyebrow flex items-center gap-3">
+        <span className="font-mono text-[0.625rem] text-ash-deep">{step}</span>
+        <span className="h-px w-6 bg-[var(--hairline-strong)]" />
+        {title}
+      </p>
+      <div className="mt-8 flex flex-col gap-9">{children}</div>
+    </fieldset>
+  );
 }
 
 export default function BookingForm() {
@@ -176,76 +215,123 @@ export default function BookingForm() {
         }}
         noValidate
       >
-        <div className="flex flex-col gap-9">
-          <TextField
-            id="name"
-            name="name"
-            label="Adınız"
-            required
-            autoComplete="given-name"
-            placeholder="Zeynep"
-            value={values.name}
-            error={errors.name}
-            onChange={(event) => set("name", event.target.value)}
-          />
-
-          <RadioCards
-            legend="Ne yaptırmak istiyorsunuz?"
-            name="projectType"
-            options={projectTypes}
-            value={values.projectType}
-            onChange={(value) => set("projectType", value)}
-            error={errors.projectType}
-            required
-          />
-
-          <TextAreaField
-            id="idea"
-            name="idea"
-            label="Fikriniz"
-            hint="Net bir fikir gerekmiyor; ne istemediğinizi yazmak bile başlamak için yeterli."
-            required
-            maxLength={800}
-            placeholder="Bileğime küçük bir kır çiçeği düşünüyorum; annemin bahçesinden bir fotoğraf var elimde…"
-            value={values.idea}
-            error={errors.idea}
-            onChange={(event) => set("idea", event.target.value)}
-          />
-
-          <div className="grid gap-9 sm:grid-cols-2">
-            <SelectField
-              id="placement"
-              name="placement"
-              label="Bölge"
+        <div className="flex flex-col gap-12">
+          <Group title="Fikir" step="01">
+            <RadioCards
+              legend="Ne yaptırmak istiyorsunuz?"
+              name="projectType"
+              options={projectTypes}
+              value={values.projectType}
+              onChange={(value) => set("projectType", value)}
+              error={errors.projectType}
               required
-              options={placements}
-              value={values.placement}
-              error={errors.placement}
-              onChange={(event) => set("placement", (event.target as HTMLSelectElement).value)}
             />
-            <SelectField
-              id="size"
-              name="size"
-              label="Yaklaşık ölçü"
-              required
-              options={sizes}
-              value={values.size}
-              error={errors.size}
-              onChange={(event) => set("size", (event.target as HTMLSelectElement).value)}
-            />
-          </div>
 
-          <SelectField
-            id="budget"
-            name="budget"
-            label="Bütçe aralığı"
-            hint="İsteğe bağlı — yazarsanız ilk dönüşte daha net bir öneri gönderebilirim."
-            placeholder="Belirtmek istemiyorum"
-            options={budgets}
-            value={values.budget}
-            error={errors.budget}
-            onChange={(event) => set("budget", (event.target as HTMLSelectElement).value)}
-          />
+            <TextAreaField
+              id="idea"
+              name="idea"
+              label="Fikriniz"
+              hint="Net bir fikir gerekmiyor; ne istemediğinizi yazmak bile başlamak için yeterli."
+              required
+              maxLength={800}
+              placeholder="Bileğime küçük bir kır çiçeği düşünüyorum; annemin bahçesinden bir fotoğraf var elimde…"
+              value={values.idea}
+              error={errors.idea}
+              onChange={(event) => set("idea", event.target.value)}
+            />
+
+            <SelectField
+              id="style"
+              name="style"
+              label="Tarz"
+              hint="İsteğe bağlı — emin değilseniz boş bırakın, birlikte karar veririz."
+              placeholder="Henüz karar vermedim"
+              options={styleOptions}
+              value={values.style}
+              onChange={(event) => set("style", (event.target as HTMLSelectElement).value)}
+            />
+
+            <TextField
+              id="referenceNotes"
+              name="referenceNotes"
+              label="İlham / referans notu"
+              hint="İsteğe bağlı — Instagram ya da Pinterest bağlantısı da olur."
+              placeholder="instagram.com/p/… ya da 'annemin el yazısı'"
+              value={values.referenceNotes}
+              onChange={(event) => set("referenceNotes", event.target.value)}
+            />
+          </Group>
+
+          <Group title="Ölçü ve bölge" step="02">
+            <div className="grid gap-9 sm:grid-cols-2">
+              <SelectField
+                id="placement"
+                name="placement"
+                label="Bölge"
+                required
+                options={placements}
+                value={values.placement}
+                error={errors.placement}
+                onChange={(event) => set("placement", (event.target as HTMLSelectElement).value)}
+              />
+              <SelectField
+                id="size"
+                name="size"
+                label="Yaklaşık ölçü"
+                required
+                options={sizes}
+                value={values.size}
+                error={errors.size}
+                onChange={(event) => set("size", (event.target as HTMLSelectElement).value)}
+              />
+            </div>
+
+            <RadioCards
+              legend="Palet"
+              name="palette"
+              options={palettes}
+              value={values.palette}
+              onChange={(value) => set("palette", value)}
+              error={errors.palette}
+              columns={3}
+              required
+            />
+          </Group>
+
+          <Group title="Siz ve zamanlama" step="03">
+            <TextField
+              id="name"
+              name="name"
+              label="Adınız"
+              required
+              autoComplete="given-name"
+              placeholder="Zeynep"
+              value={values.name}
+              error={errors.name}
+              onChange={(event) => set("name", event.target.value)}
+            />
+
+            <RadioCards
+              legend="Daha önce dövme yaptırdınız mı?"
+              name="experience"
+              hint="İsteğe bağlı — ilk dövmeyse seansı buna göre planlıyorum."
+              options={experienceOptions}
+              value={values.experience}
+              onChange={(value) => set("experience", value)}
+              columns={3}
+            />
+
+            <SelectField
+              id="timePreference"
+              name="timePreference"
+              label="Ne zaman uygunsunuz?"
+              hint="İsteğe bağlı — kesin günü konuşurken belirleriz."
+              placeholder="Fark etmez"
+              options={timePreferences}
+              value={values.timePreference}
+              onChange={(event) => set("timePreference", (event.target as HTMLSelectElement).value)}
+            />
+          </Group>
         </div>
 
         <div className="mt-12 border-t border-[var(--hairline)] pt-8">

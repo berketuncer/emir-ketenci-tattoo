@@ -59,7 +59,7 @@ export default function BookingPage() {
             <span className="block italic text-ash">gerisini birlikte çizelim.</span>
           </>
         }
-        description="Altı soru, bir dakika. Yazdıklarınız hazır bir WhatsApp mesajına dönüşür; göndermeden önce dilediğiniz gibi düzenleyebilirsiniz."
+        description="Üç kısa bölüm, birkaç dakika. Fiyat sormuyorum — rakam ancak fikri, ölçüyü ve bölgeyi gördükten sonra anlamlı oluyor. Yazdıklarınız hazır bir WhatsApp mesajına dönüşür; göndermeden önce dilediğiniz gibi düzenleyebilirsiniz."
         crumbs={[{ label: "Ana Sayfa", href: "/" }, { label: "Randevu Talebi" }]}
       />
 
