@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Emir Ketenci — Dövme Stüdyosu Web Sitesi
 
-## Getting Started
+Karaköy'de **tek kişilik** bir dövme stüdyosu için hazırlanmış, üretime hazır yapıda bir tanıtım
+sitesi. Stüdyoda yalnızca Emir Ketenci çalışır; site buna göre birinci tekil şahısla yazılmıştır.
+Tüm içerik şu an demo verisidir; gerçek içerik geldiğinde yalnızca `src/data` altındaki dosyaların
+değişmesi yeterlidir.
 
-First, run the development server:
+## Kurulum
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # üretim derlemesi
+npm start        # derlenmiş sürümü çalıştır
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Teknoloji
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Katman | Seçim |
+| --- | --- |
+| Çatı | Next.js 16 (App Router, Turbopack) |
+| Dil | TypeScript (strict) |
+| Stil | Tailwind CSS v4 — tasarım belirteçleri `src/app/globals.css` içinde `@theme` ile |
+| Tipografi | Bodoni Moda (başlık), Inter (metin), Geist Mono (etiket) — `next/font` ile self-host |
+| Görseller | Yerel olarak üretilen SVG (aşağıya bakın) |
+| Bağımlılık | Sıfır ek paket — ücretli servis, API anahtarı veya abonelik yok |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Dizin yapısı
 
-## Learn More
+```
+src/
+├── app/                      # rotalar, metadata, sitemap/robots/manifest
+│   ├── calismalar/           # portfolyo (filtre + lightbox)
+│   ├── hakkimda/             # kişisel tanıtım sayfası
+│   ├── stiller/[slug]/       # tarz detay
+│   ├── randevu/              # çok adımlı randevu talebi
+│   ├── studyo/ bakim/ sss/ iletisim/ hediye-karti/
+│   └── gizlilik/ kvkk/ cerez-politikasi/ kullanim-kosullari/
+├── components/
+│   ├── ui/                   # Button, Media, Section, Reveal, Accordion, PageHero…
+│   ├── layout/               # Header, Footer, ScrollProgress, QuickContact…
+│   ├── sections/             # ana sayfa bölümleri
+│   ├── work/                 # WorkGallery + Lightbox
+│   └── booking/              # randevu formu ve alan bileşenleri
+├── data/                     # TÜM İÇERİK BURADA
+└── lib/                      # yardımcılar ve SEO/şema üreticileri
+```
 
-To learn more about Next.js, take a look at the following resources:
+## İçeriği gerçek verilerle değiştirmek
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Bileşenlerin hiçbirinde sabit içerik yoktur. Değiştirmeniz gereken dosyalar:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Dosya | İçerik |
+| --- | --- |
+| `src/data/site.ts` | Marka adı, adres, telefon, saatler, menü, sosyal hesaplar |
+| `src/data/artist.ts` | Emir Ketenci: biyografi, prensipler, müsaitlik, kilometre taşları |
+| `src/data/works.ts` | Portfolyo |
+| `src/data/styles.ts` | Dövme tarzları |
+| `src/data/testimonials.ts` | Müşteri yorumları |
+| `src/data/faq.ts` | Sık sorulan sorular |
+| `src/data/pricing.ts` | Fiyat aralıkları |
+| `src/data/process.ts`, `aftercare.ts`, `studio.ts`, `giftcard.ts` | Süreç, bakım, atölye, hediye kartı |
+| `src/data/booking.ts` | Randevu formundaki seçenek listeleri |
 
-## Deploy on Vercel
+Tipler `src/data/types.ts` içinde. Bir CMS'e ya da API'ye geçildiğinde bu dosyaların yerine
+aynı tipleri döndüren fonksiyonlar konması yeterlidir.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Görseller
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Sitedeki tüm görseller `scripts/` altındaki üreticiyle yerel olarak, deterministik biçimde
+üretilir — hiçbir ücretli kaynak, stok fotoğraf servisi ya da dış istek yoktur.
+
+```bash
+node scripts/generate-images.mjs     # public/img/** içine SVG üretir
+```
+
+Çıktı vektörel olduğu için her ekran yoğunluğunda nettir ve toplam boyut ~1 MB'tır.
+
+**Gerçek fotoğraflara geçiş:** `src/data/*.ts` içindeki `media.src` alanlarını `.jpg`/`.webp`
+dosyalarıyla değiştirmeniz yeterli. `src/components/ui/Media.tsx` raster dosyaları otomatik
+olarak `next/image` ile servis eder; oran bilgisi verildiği için yerleşim kayması (CLS) oluşmaz.
+
+## Randevu formu
+
+`src/components/booking/BookingForm.tsx` beş adımlı bir akış yürütür: fikir → ölçü ve bölge →
+referanslar → tarih ve bütçe → iletişim. Adım bazlı doğrulama, taslak saklama (localStorage),
+sürükle-bırak görsel yükleme, özet ve başarı/hata durumları hazırdır.
+
+Şu an sunucu yoktur; `submit()` içindeki bekleme simülasyonunun yerine kendi API çağrınızı
+koyduğunuzda akış olduğu gibi çalışır. Yüklenen görseller tarayıcıdan çıkmaz.
+
+## SEO ve erişilebilirlik
+
+- Sayfa bazlı `metadata`, Open Graph ve Twitter kartları (`src/lib/seo.ts`)
+- `TattooParlor`, `Person`, `FAQPage` ve `BreadcrumbList` schema.org verileri
+- `sitemap.ts`, `robots.ts`, `manifest.ts`, üretilen `opengraph-image`
+- Klavye ile tam gezinme, odak halkaları, `prefers-reduced-motion` desteği,
+  anlamlı `alt` metinleri, form etiketleri ve hata duyuruları
+
+## Notlar
+
+- İletişim bilgileri, yorumlar ve fiyatlar demo içeriktir.
+- Yasal sayfalar taslaktır; yayına geçmeden önce hukuk danışmanı metinleriyle değiştirilmelidir.
+- Harita, kullanıcı istemeden yüklenmez (OpenStreetMap gömülü çerçevesi, anahtar gerektirmez).

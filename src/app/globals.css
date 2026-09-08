@@ -1,26 +1,363 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ==========================================================================
+   İZ ATÖLYE — Tasarım sistemi
+   Tek kaynak: renk, tipografi, ritim ve hareket burada tanımlanır.
+   ========================================================================== */
+
+@theme {
+  /* Yüzeyler — sıcak siyah, mürekkep tonları */
+  --color-ink: #08080a;
+  --color-ink-900: #0d0d10;
+  --color-ink-800: #131316;
+  --color-ink-700: #1a1a1e;
+  --color-ink-600: #232329;
+  --color-ink-500: #2f2f36;
+
+  /* Metin — kâğıt tonları */
+  --color-bone: #f3f0ea;
+  --color-ash: #9c9891;
+  --color-ash-dim: #8a867f;
+  --color-ash-deep: #807c75;
+
+  /* Vurgu — kor / kil */
+  --color-ember: #c2603a;
+  --color-ember-bright: #d9784e;
+  --color-ember-deep: #8c3f24;
+
+  /* Durum */
+  --color-signal: #7fa87a;
+  --color-warn: #d9a441;
+  --color-danger: #d1603f;
+
+  /* Tipografi */
+  --font-display: var(--font-bodoni), "Didot", "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-mono-geist), ui-monospace, "SFMono-Regular", monospace;
+
+  /* Hareket */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Kırılım noktaları (Tailwind varsayılanı + geniş ekran) */
+  --breakpoint-3xl: 96rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* --------------------------------------------------------------------------
+   Temel
+   -------------------------------------------------------------------------- */
 
-@media (prefers-color-scheme: dark) {
+@layer base {
+  * {
+    border-color: var(--hairline);
+  }
+
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --hairline: color-mix(in oklab, var(--color-bone) 12%, transparent);
+    --hairline-strong: color-mix(in oklab, var(--color-bone) 22%, transparent);
+    --header-h: 4.5rem;
+    color-scheme: dark;
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --header-h: 5.5rem;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 1.5rem);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-feature-settings: "kern", "liga", "calt";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-ember);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ember-bright);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Fare ile tıklamada halka gösterme, klavyede göster */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img, svg, video {
+    display: block;
+    max-width: 100%;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-ink-600);
+    border-radius: 99px;
+    border: 2px solid var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ink-500);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* --------------------------------------------------------------------------
+   Yardımcı sınıflar
+   -------------------------------------------------------------------------- */
+
+@layer components {
+  .container-page {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 88rem;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-page { padding-inline: 2rem; }
+  }
+  @media (min-width: 1280px) {
+    .container-page { padding-inline: 3.5rem; }
+  }
+
+  .container-prose {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 46rem;
+  }
+
+  /* Editörel başlık ölçeği — akışkan */
+  .type-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 0.94;
+    letter-spacing: -0.02em;
+    font-size: clamp(2.75rem, 1.2rem + 7vw, 8rem);
+  }
+
+  .type-h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    font-size: clamp(2.25rem, 1.1rem + 4.6vw, 5rem);
+  }
+
+  .type-h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    font-size: clamp(1.875rem, 1rem + 3vw, 3.5rem);
+  }
+
+  .type-h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    font-size: clamp(1.375rem, 0.95rem + 1.5vw, 2.125rem);
+  }
+
+  .type-lead {
+    font-size: clamp(1.0625rem, 0.98rem + 0.4vw, 1.3125rem);
+    line-height: 1.6;
+    color: var(--color-ash);
+  }
+
+  .type-body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-ash);
+  }
+
+  /* Küçük büyük harfli etiket */
+  .type-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--color-ash-dim);
+  }
+
+  .hairline {
+    border-color: var(--hairline);
+  }
+
+  /* Film grenli doku — tüm sitede ince bir katman */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.14;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  }
+
+  /* Bağlantı altı çizgisi — soldan sağa açılır */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.15em;
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s var(--ease-out-expo);
+  }
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* JavaScript kapalıysa belirme animasyonu devreye girmez, içerik görünür kalır */
+  .no-js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Kaydırmada belirme */
+  .reveal {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+      opacity 0.9s var(--ease-out-expo),
+      transform 0.9s var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal[data-revealed="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Görsel çerçevesi — yüklenirken iskelet */
+  .media-frame {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-ink-800);
+  }
+  .media-frame > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@layer utilities {
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Animasyonlar
+   -------------------------------------------------------------------------- */
+
+@keyframes iz-fade-up {
+  from { opacity: 0; transform: translateY(1.25rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes iz-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes iz-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes iz-pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+@keyframes iz-shimmer {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes iz-draw {
+  from { stroke-dashoffset: var(--dash, 1200); }
+  to { stroke-dashoffset: 0; }
+}
+
+.animate-fade-up { animation: iz-fade-up 0.9s var(--ease-out-expo) both; }
+.animate-fade-in { animation: iz-fade-in 1.2s ease both; }
+.animate-marquee { animation: iz-marquee var(--marquee-duration, 40s) linear infinite; }
+.animate-pulse-dot { animation: iz-pulse-dot 2.4s ease-in-out infinite; }
+
+/* --------------------------------------------------------------------------
+   Azaltılmış hareket
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Yazdırma — temiz çıktı */
+@media print {
+  body { background: #fff; color: #000; }
+  .no-print { display: none !important; }
 }

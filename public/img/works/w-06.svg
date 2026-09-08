@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 854" width="1280" height="854" role="img" preserveAspectRatio="xMidYMid slice">
+<defs>
+<radialGradient id="lit" cx="57.4%" cy="26.4%" r="88%">
+<stop offset="0" stop-color="#a09891"/>
+<stop offset="0.3" stop-color="#6d665f"/>
+<stop offset="0.66" stop-color="#282523"/>
+<stop offset="1" stop-color="#0a0a0a"/>
+</radialGradient>
+<radialGradient id="vig" cx="57.4%" cy="26.4%" r="86%">
+<stop offset="0.42" stop-color="#000" stop-opacity="0"/>
+<stop offset="1" stop-color="#000" stop-opacity="0.55"/>
+</radialGradient>
+<filter id="mottle" x="0" y="0" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.005 0.009" numOctaves="4" seed="843"/>
+<feColorMatrix type="saturate" values="0"/>
+</filter>
+<filter id="grain" x="0" y="0" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="860"/>
+<feColorMatrix type="saturate" values="0"/>
+</filter>
+<filter id="bleed" x="-15%" y="-15%" width="130%" height="130%">
+<feGaussianBlur stdDeviation="1.4"/>
+</filter>
+<g id="motif"><path d="M 500 199.8 A 300.2 300.2 0 1 0 500 800.2 A 234.2 276.2 0 1 1 500 199.8 Z" fill="#0B0908" stroke="none" opacity="0.9"/><path d="M 826.7 181.4 L 831.5 193.8 L 844 198.7 L 831.5 203.5 L 826.7 216 L 821.8 203.5 L 809.4 198.7 L 821.8 193.8 Z" fill="#0B0908" stroke="none"/><path d="M 76.7 599.5 L 80 608 L 88.5 611.3 L 80 614.6 L 76.7 623.1 L 73.3 614.6 L 64.8 611.3 L 73.3 608 Z" fill="#0B0908" stroke="none"/><path d="M 809 197.2 L 813.7 209.3 L 825.8 214 L 813.7 218.7 L 809 230.8 L 804.3 218.7 L 792.1 214 L 804.3 209.3 Z" fill="#0B0908" stroke="none"/><path d="M 291.9 127.4 L 295.3 136.1 L 304 139.5 L 295.3 142.9 L 291.9 151.6 L 288.5 142.9 L 279.8 139.5 L 288.5 136.1 Z" fill="#0B0908" stroke="none"/><path d="M 99.5 622.2 L 104.4 635 L 117.2 639.9 L 104.4 644.9 L 99.5 657.7 L 94.5 644.9 L 81.8 639.9 L 94.5 635 Z" fill="#0B0908" stroke="none"/></g>
+</defs>
+<rect width="1280" height="854" fill="url(#lit)"/>
+<rect width="1280" height="854" filter="url(#mottle)" opacity="0.38" style="mix-blend-mode:overlay"/>
+<g transform="translate(391.4 -426.7) scale(1.3809) rotate(0.2 180 618.2)">
+<use href="#motif" filter="url(#bleed)" opacity="0.5"/>
+<use href="#motif" opacity="1"/>
+</g>
+<rect width="1280" height="854" fill="url(#vig)"/>
+<rect width="1280" height="854" filter="url(#grain)" opacity="0.26" style="mix-blend-mode:overlay"/>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 1100" width="880" height="1100" role="img" preserveAspectRatio="xMidYMid slice">
+<defs>
+<radialGradient id="lit" cx="62.5%" cy="45.1%" r="88%">
+<stop offset="0" stop-color="#93929a"/>
+<stop offset="0.3" stop-color="#5f6167"/>
+<stop offset="0.66" stop-color="#242427"/>
+<stop offset="1" stop-color="#09090b"/>
+</radialGradient>
+<radialGradient id="vig" cx="62.5%" cy="45.1%" r="86%">
+<stop offset="0.42" stop-color="#000" stop-opacity="0"/>
+<stop offset="1" stop-color="#000" stop-opacity="0.55"/>
+</radialGradient>
+<filter id="mottle" x="0" y="0" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.005 0.009" numOctaves="4" seed="629"/>
+<feColorMatrix type="saturate" values="0"/>
+</filter>
+<filter id="grain" x="0" y="0" width="100%" height="100%">
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="646"/>
+<feColorMatrix type="saturate" values="0"/>
+</filter>
+<filter id="bleed" x="-15%" y="-15%" width="130%" height="130%">
+<feGaussianBlur stdDeviation="2.3"/>
+</filter>
+<g id="motif"><path d="M 541.7 855 Q 604 874.3 642.1 821.3 Q 579.8 802 541.7 855 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="541.7" y1="855" x2="642.1" y2="821.3" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 569.1 792.7 Q 621.8 722.3 571.7 650 Q 519.1 720.4 569.1 792.7 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="569.1" y1="792.7" x2="571.7" y2="650" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 592.3 730.3 Q 667.5 758.8 718.4 696.4 Q 643.1 668 592.3 730.3 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="592.3" y1="730.3" x2="718.4" y2="696.4" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 610 668 Q 676.1 610.4 642.4 529.4 Q 576.3 587 610 668 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="610" y1="668" x2="642.4" y2="529.4" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 622.1 605.7 Q 714.2 629.3 765.8 549.5 Q 673.8 525.9 622.1 605.7 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="622.1" y1="605.7" x2="765.8" y2="549.5" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 628.5 543.3 Q 719.9 482.4 691.1 376.4 Q 599.7 437.3 628.5 543.3 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="628.5" y1="543.3" x2="691.1" y2="376.4" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 629.2 481 Q 752 504.9 813.6 396 Q 690.8 372.1 629.2 481 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="629.2" y1="481" x2="813.6" y2="396" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 624.3 418.7 Q 684.9 342.2 631.6 260.4 Q 571 336.9 624.3 418.7 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="624.3" y1="418.7" x2="631.6" y2="260.4" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 614.5 356.3 Q 722.7 362.6 763 262 Q 654.8 255.7 614.5 356.3 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="614.5" y1="356.3" x2="763" y2="262" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 600.2 294 Q 673.8 238.6 644.6 151.3 Q 571 206.7 600.2 294 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="600.2" y1="294" x2="644.6" y2="151.3" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 582.4 231.7 Q 653.2 265.5 707.7 209.1 Q 636.9 175.3 582.4 231.7 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="582.4" y1="231.7" x2="707.7" y2="209.1" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 561.7 169.3 Q 615.1 117.8 583.1 50.8 Q 529.7 102.3 561.7 169.3 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="561.7" y1="169.3" x2="583.1" y2="50.8" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 539.7 107 Q 596.6 127.7 634.3 80.3 Q 577.4 59.6 539.7 107 Z" fill="none" stroke="#0B0908" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="539.7" y1="107" x2="634.3" y2="80.3" fill="none" stroke="#0B0908" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><path d="M 500 940 C 505.9 928.2, 524.2 892.8, 535.4 869.2 C 546.5 845.6, 557.4 821.9, 567 798.3 C 576.7 774.7, 585.7 751.1, 593.3 727.5 C 601 703.9, 607.8 680.3, 613.1 656.7 C 618.5 633.1, 622.7 609.4, 625.6 585.8 C 628.5 562.2, 630.1 538.6, 630.4 515 C 630.8 491.4, 629.8 467.8, 627.8 444.2 C 625.8 420.6, 622.4 396.9, 618.2 373.3 C 614 349.7, 608.6 326.1, 602.7 302.5 C 596.7 278.9, 589.7 255.3, 582.4 231.7 C 575.1 208.1, 567 184.4, 558.9 160.8 C 550.7 137.2, 537.8 101.8, 533.6 90" fill="none" stroke="#0B0908" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+</defs>
+<rect width="880" height="1100" fill="url(#lit)"/>
+<rect width="880" height="1100" filter="url(#mottle)" opacity="0.38" style="mix-blend-mode:overlay"/>
+<g transform="translate(35.2 145.2) scale(0.8096) rotate(1.3 500 500)">
+<use href="#motif" filter="url(#bleed)" opacity="0.5"/>
+<use href="#motif" opacity="1"/>
+</g>
+<rect width="880" height="1100" fill="url(#vig)"/>
+<rect width="880" height="1100" filter="url(#grain)" opacity="0.26" style="mix-blend-mode:overlay"/>
+</svg>
