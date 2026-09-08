@@ -103,18 +103,6 @@ export interface Work {
   note?: string;
 }
 
-export interface Testimonial {
-  id: string;
-  name: string;
-  quote: string;
-  style: StyleSlug;
-  /** Ay/yıl — "Mart 2026" gibi. */
-  date: string;
-  rating: 4 | 5;
-  /** İlk dövmesi miydi? Güven mesajı için kullanılır. */
-  firstTattoo?: boolean;
-}
-
 export interface FaqItem {
   id: string;
   question: string;

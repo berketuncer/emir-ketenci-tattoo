@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { artist } from "@/data/artist";
 import { faqItems } from "@/data/faq";
 import { fullAddress, site } from "@/data/site";
-import { averageRating, reviewCount } from "@/data/testimonials";
 
 const OG_IMAGE = "/og.png";
 
@@ -78,12 +77,6 @@ export function localBusinessSchema() {
         closes: h.value.split("–")[1]?.trim(),
       })),
     sameAs: site.social.map((s) => s.href),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: averageRating,
-      reviewCount,
-      bestRating: 5,
-    },
     founder: {
       "@type": "Person",
       name: artist.name,
