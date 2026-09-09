@@ -1,15 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Close, Instagram, Mail, Phone, WhatsApp } from "@/components/ui/Icons";
-import { mailLink, phoneLink, site, whatsappLink } from "@/data/site";
+import { Close, Instagram, WhatsApp } from "@/components/ui/Icons";
+import { site, whatsappLink } from "@/data/site";
 import { cn } from "@/lib/utils";
 
+/** Tek kanal WhatsApp; Instagram portfolyo için. Arama ve e-posta bilinçli olarak yok. */
 const channels = [
-  { label: "WhatsApp", href: whatsappLink(), Icon: WhatsApp, external: true },
-  { label: "Telefon", href: phoneLink, Icon: Phone, external: false },
-  { label: "E-posta", href: mailLink, Icon: Mail, external: false },
-  { label: "Instagram", href: site.social[0].href, Icon: Instagram, external: true },
+  { label: "WhatsApp", href: whatsappLink(), Icon: WhatsApp },
+  { label: "Instagram", href: site.social[0].href, Icon: Instagram },
 ];
 
 /** Sağ altta duran hızlı iletişim düğmesi. */
@@ -46,12 +45,13 @@ export default function QuickContact() {
         )}
         aria-hidden={!open}
       >
-        {channels.map(({ label, href, Icon, external }, index) => (
+        {channels.map(({ label, href, Icon }, index) => (
           <li key={label} style={{ transitionDelay: `${index * 40}ms` }}>
             <a
               href={href}
               tabIndex={open ? 0 : -1}
-              {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 rounded-full border border-[var(--hairline-strong)] bg-ink-800/95 py-2.5 pl-4 pr-3 text-sm text-bone shadow-lg backdrop-blur transition-colors hover:border-bone/40 hover:bg-ink-700"
             >
               {label}

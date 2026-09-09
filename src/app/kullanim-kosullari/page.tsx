@@ -5,7 +5,7 @@ import Section from "@/components/ui/Section";
 import Prose from "@/components/ui/Prose";
 import DemoNotice from "@/components/ui/DemoNotice";
 import { ArrowUpRight } from "@/components/ui/Icons";
-import { mailLink, site } from "@/data/site";
+import { site, whatsappLink } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
 
 const UPDATED = "1 Eylül 2026";
@@ -205,7 +205,11 @@ export default function KullanimKosullariPage() {
                   verilerin işlenmesine ilişkin bilgilendirme için{" "}
                   <Link href="/kvkk">KVKK Aydınlatma Metni</Link> ve{" "}
                   <Link href="/gizlilik">Gizlilik Politikası</Link> sayfalarına bakın. Sorularınız
-                  için <a href={mailLink}>{site.contact.email}</a> adresine yazabilirsiniz.
+                  için{" "}
+                  <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+                    WhatsApp
+                  </a>
+                  &apos;tan yazabilirsiniz.
                 </p>
               </Prose>
 

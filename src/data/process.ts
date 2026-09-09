@@ -1,7 +1,7 @@
 import type { ProcessStep } from "./types";
 
 /**
- * Randevu süreci. Hem ana sayfada özet hem stüdyo sayfasında detaylı gösterilir.
+ * Randevu süreci. Ana sayfada özet olarak gösterilir.
  */
 export const processSteps: ProcessStep[] = [
   {
@@ -17,15 +17,15 @@ export const processSteps: ProcessStep[] = [
     title: "Ön değerlendirme",
     summary: "Talebinizi okuyup fiyat aralığını paylaşıyorum.",
     detail:
-      "Talebinizi okur, fikrin nasıl çalışacağını değerlendiririm. Tahmini seans sayısını ve fiyat aralığını 48 saat içinde yazıyorum. Bu aşamada hiçbir ödeme yok.",
-    duration: "48 saat içinde",
+      "Talebinizi okur, fikrin nasıl çalışacağını değerlendiririm. Tahmini seans sayısını ve fiyat aralığını genelde birkaç gün içinde yazıyorum; mesajlara toplu baktığım için hemen dönemezsem unutmuş değilim. Bu aşamada hiçbir ödeme yok.",
+    duration: "Birkaç gün",
   },
   {
     step: 3,
     title: "Tasarım görüşmesi",
-    summary: "Stüdyoda ya da görüntülü olarak detayları netleştiriyoruz.",
+    summary: "Yüz yüze ya da görüntülü olarak detayları netleştiriyoruz.",
     detail:
-      "Ölçü, yerleşim ve tarz burada kesinleşir. Bölgeyi görmek çoğu zaman tasarımı değiştirir; bu yüzden mümkünse stüdyoda buluşmayı öneriyorum. Görüşme ücretsizdir.",
+      "Ölçü, yerleşim ve tarz burada kesinleşir. Bölgeyi görmek çoğu zaman tasarımı değiştirir; bu yüzden mümkünse yüz yüze buluşmayı öneriyorum, yerini birlikte ayarlarız. Görüşme ücretsizdir.",
     duration: "30 – 45 dakika",
   },
   {
@@ -47,9 +47,9 @@ export const processSteps: ProcessStep[] = [
   {
     step: 6,
     title: "Bakım ve iyileşme",
-    summary: "Yazılı bakım talimatı ve iyileşme takibi.",
+    summary: "Yazılı bakım talimatı; aklınıza takılan olursa yazarsınız.",
     detail:
-      "Çıkarken yazılı bakım talimatı ve iletişim numaramı veriyorum. İlk hafta içinde bir kez durumunuzu soruyorum. İlk 12 ay içinde gereken rötuş bir kez ücretsizdir.",
+      "Çıkarken yazılı bakım talimatı veriyorum; sitedeki bakım rehberi de aynı şeyi anlatır. Aklınıza takılan bir şey olursa WhatsApp'tan yazın. İlk 12 ay içinde gereken rötuş bir kez ücretsizdir.",
     duration: "2 – 4 hafta",
   },
 ];

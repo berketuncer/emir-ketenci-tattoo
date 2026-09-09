@@ -225,9 +225,6 @@ export default function Header() {
               <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hover:text-bone">
                 WhatsApp
               </a>
-              <a href={`tel:${site.contact.phone.replace(/[^0-9+]/g, "")}`} className="hover:text-bone">
-                {site.contact.phoneDisplay}
-              </a>
               <a href={site.social[0].href} target="_blank" rel="noopener noreferrer" className="hover:text-bone">
                 {site.social[0].handle}
               </a>

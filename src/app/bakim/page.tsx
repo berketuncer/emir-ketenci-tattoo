@@ -4,10 +4,10 @@ import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import Accordion from "@/components/ui/Accordion";
-import { ArrowUpRight, Phone, Shield, WhatsApp } from "@/components/ui/Icons";
+import { ArrowUpRight, Shield, WhatsApp } from "@/components/ui/Icons";
 import { aftercareDisclaimer, aftercarePhases, aftercareWarnings } from "@/data/aftercare";
 import { faqByCategory } from "@/data/faq";
-import { phoneLink, site, whatsappLink } from "@/data/site";
+import { site, whatsappLink } from "@/data/site";
 import { breadcrumbSchema, pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
@@ -254,14 +254,19 @@ export default function AftercarePage() {
             </div>
 
             <p className="mt-9 flex flex-wrap items-center justify-center gap-2.5 text-sm text-ash">
-              <Phone className="h-4 w-4 text-ash-deep" />
-              <a href={phoneLink} className="link-underline text-bone">
-                {site.contact.phoneDisplay}
+              <WhatsApp className="h-4 w-4 text-ash-deep" />
+              <a
+                href={whatsappLink("Merhaba, dövmemin iyileşmesiyle ilgili bir sorum var.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-underline text-bone"
+              >
+                {site.contact.whatsappDisplay}
               </a>
               <span aria-hidden className="text-ash-deep">
                 ·
               </span>
-              <span>{site.hoursSummary}</span>
+              <span>Yazın, sırayla dönüyorum.</span>
             </p>
           </Reveal>
         </div>

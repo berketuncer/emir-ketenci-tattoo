@@ -14,7 +14,7 @@ export const faqItems: FaqItem[] = [
     category: "fiyat",
     question: "Dövme fiyatları nasıl belirleniyor?",
     answer:
-      "Fiyat üç şeye bağlı: harcanan süre, tasarımın karmaşıklığı ve bölgenin zorluğu. Küçük işler parça bazlı, büyük projeler saatlik fiyatlanır. Talebinizi gönderdiğinizde 48 saat içinde net bir aralık paylaşıyorum — sürprizli ek ücret çıkarmıyorum.",
+      "Fiyat üç şeye bağlı: harcanan süre, tasarımın karmaşıklığı ve bölgenin zorluğu. Küçük işler parça bazlı, büyük projeler saatlik fiyatlanır. Talebinizi gönderdiğinizde genelde birkaç gün içinde net bir aralık paylaşıyorum — sürprizli ek ücret çıkarmıyorum.",
   },
   {
     id: "f-02",
@@ -42,7 +42,7 @@ export const faqItems: FaqItem[] = [
     category: "randevu",
     question: "Randevu almadan gelebilir miyim?",
     answer:
-      "Danışmak için gelebilirsiniz, çalışma saatleri içinde kapım açık. Ama uygulama için mutlaka randevu gerekiyor: her işe önce tasarım süresi ayırıyorum, aynı gün iğne açmıyorum.",
+      "Hayır, sadece randevuyla çalışıyorum; sabit bir vitrin ya da açık kapı saatim yok. Danışmak için bile önce WhatsApp'tan yazmanız gerekiyor — buluşmayı ve konumu oradan ayarlıyoruz. Uygulama için de aynı gün iğne açmıyorum: her işe önce tasarım süresi ayırıyorum.",
   },
   {
     id: "f-06",
@@ -119,7 +119,7 @@ export const faqItems: FaqItem[] = [
     category: "uygulama",
     question: "Yanımda birini getirebilir miyim?",
     answer:
-      "Yanınızda bir kişi getirebilirsiniz. Stüdyo küçük ve sakin bir yer; kalabalık hem benim konsantrasyonumu hem seansın akışını etkiliyor.",
+      "Yanınızda bir kişi getirebilirsiniz. Çalıştığım yer küçük ve sakin; kalabalık hem benim konsantrasyonumu hem seansın akışını etkiliyor.",
   },
   {
     id: "f-17",

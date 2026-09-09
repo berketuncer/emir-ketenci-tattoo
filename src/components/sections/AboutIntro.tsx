@@ -3,10 +3,9 @@ import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import Media from "@/components/ui/Media";
 import Reveal from "@/components/ui/Reveal";
-import Badge from "@/components/ui/Badge";
 import Parallax from "@/components/ui/Parallax";
 import { ArrowUpRight } from "@/components/ui/Icons";
-import { artist, availabilityTone, yearsActive } from "@/data/artist";
+import { artist, yearsActive } from "@/data/artist";
 import { site } from "@/data/site";
 import { styleName } from "@/data/styles";
 
@@ -43,16 +42,10 @@ export default function AboutIntro() {
               </h2>
               <p className="type-lead mt-6 max-w-xl">{artist.tagline}</p>
               <p className="type-body mt-5 max-w-xl">
-                {years} yıldır dövme yapıyorum, {site.currentYear - site.founded} yıldır Karaköy&apos;deki kendi
-                stüdyomdayım. Günde tek randevu alıyorum — gün sizin, araya başka bir iş girmiyor.
+                {years} yıldır dövme yapıyorum, {site.currentYear - site.founded} yıldır kendi başıma. Günde tek
+                randevu alıyorum — gün sizin, araya başka bir iş girmiyor.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Badge tone={availabilityTone[artist.availability.status]} dot>
-                  {artist.availability.label}
-                </Badge>
-                <span className="text-sm text-ash-dim">{artist.availability.detail}</span>
-              </div>
 
               <ul className="mt-9 flex flex-wrap gap-2">
                 {artist.focusStyles.map((slug) => (

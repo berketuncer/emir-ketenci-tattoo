@@ -1,31 +1,10 @@
-import type { Media, StudioValue } from "./types";
+import type { StudioValue } from "./types";
 
-export const studioStory = {
-  eyebrow: "Stüdyo",
-  title: "Karaköy'de, üçüncü katta, tek bir çizim masası.",
-  paragraphs: [
-    "Stüdyoyu 2019'da, kendi çizim masamı bir mekâna taşıyarak açtım. O gün bugündür burada tek başıma çalışıyorum.",
-    "Günde tek randevu alıyorum. Az iş almak, her çalışmaya tasarım süresi ayırabilmek demek — sıraya alınmış bir üretim bandı değil, bir randevu.",
-    "Bekleme salonu yok. Siz gelmeden önce mekân hazırlanır, siz çıktıktan sonra toplanır. Gün içinde araya başka kimse girmez.",
-  ],
-  gallery: [
-    { src: "/img/studio/studio-01.svg", alt: "Stüdyonun çalışma masası ve doğal ışık alan pencere", ratio: "landscape" },
-    { src: "/img/studio/studio-02.svg", alt: "Sterilizasyon alanı ve tek kullanımlık malzeme rafları", ratio: "portrait" },
-    { src: "/img/studio/studio-03.svg", alt: "Eskiz defterleri ve çizim masası detayı", ratio: "portrait" },
-    { src: "/img/studio/studio-04.svg", alt: "Stüdyonun giriş koridoru ve duvardaki çerçeveli çizimler", ratio: "landscape" },
-    { src: "/img/studio/studio-05.svg", alt: "Uygulama koltuğu ve ayarlanabilir aydınlatma", ratio: "portrait" },
-    { src: "/img/studio/studio-06.svg", alt: "Karaköy'e bakan stüdyo penceresi", ratio: "landscape" },
-  ] satisfies Media[],
-};
-
-export const studioStats = [
-  { value: "2014", label: "İğne tuttuğum yıl" },
-  { value: "2019", label: "Stüdyonun açılışı" },
-  { value: "1", label: "Günlük randevu" },
-  { value: "10", label: "Çalıştığım tarz" },
-];
-
-/** "Neden burası" bölümü. */
+/**
+ * Çalışma kuralları ve hijyen. Mekân anlatımı yok — sadece randevuyla
+ * çalışılıyor ve konum randevu kesinleşince paylaşılıyor; kurallar ise
+ * nerede çalışılırsa çalışılsın aynı.
+ */
 export const studioValues: StudioValue[] = [
   {
     id: "v-01",

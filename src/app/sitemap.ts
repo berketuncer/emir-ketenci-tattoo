@@ -34,11 +34,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/randevu", 0.9, "monthly"),
     entry("/hakkimda", 0.8, "monthly"),
     entry("/stiller", 0.8, "monthly"),
-    entry("/studyo", 0.7, "monthly"),
     entry("/iletisim", 0.7, "monthly"),
     entry("/sss", 0.6, "monthly"),
     entry("/bakim", 0.6, "yearly"),
-    entry("/hediye-karti", 0.5, "yearly"),
   ];
 
   const stylePages: MetadataRoute.Sitemap = styles.map((style) =>

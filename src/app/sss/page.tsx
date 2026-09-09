@@ -213,7 +213,7 @@ export default function SssPage() {
             </div>
 
             <p className="mt-8 text-xs text-ash-deep">
-              Randevu taleplerine {site.booking.responseTime} dönüyoruz · {site.hoursSummary}
+              Randevu taleplerine {site.booking.responseTime} dönüyorum. {site.booking.responseNote}
             </p>
           </Reveal>
         </div>

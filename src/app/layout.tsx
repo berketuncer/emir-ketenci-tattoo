@@ -40,7 +40,7 @@ const mono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Karaköy Dövme ve Tasarım Stüdyosu`,
+    default: `${site.name} — Dövme ve Tasarım Stüdyosu · İstanbul`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
@@ -49,7 +49,6 @@ export const metadata: Metadata = {
     "dövme",
     "tattoo",
     "İstanbul dövme stüdyosu",
-    "Karaköy dövme",
     "fine line dövme",
     "blackwork",
     "realizm dövme",
@@ -65,13 +64,13 @@ export const metadata: Metadata = {
     locale: site.locale,
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — Karaköy Dövme ve Tasarım Stüdyosu`,
+    title: `${site.name} — Dövme ve Tasarım Stüdyosu · İstanbul`,
     description: site.description,
     images: [{ url: "/og.png", width: 1200, height: 630, alt: `${site.name} dövme stüdyosu` }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Karaköy Dövme ve Tasarım Stüdyosu`,
+    title: `${site.name} — Dövme ve Tasarım Stüdyosu · İstanbul`,
     description: site.shortDescription,
     images: ["/og.png"],
   },

@@ -31,7 +31,7 @@ export default function Hero() {
           <div className="lg:col-span-7 lg:pt-6">
             <p className="type-eyebrow flex items-center gap-3 animate-fade-up">
               <span aria-hidden className="h-px w-10 bg-[var(--hairline-strong)]" />
-              Karaköy · İstanbul · {artist.since}&apos;ten beri
+              İstanbul · Sadece randevuyla · {artist.since}&apos;ten beri
             </p>
 
             <h1 className="type-display mt-7 animate-fade-up [animation-delay:80ms]">
@@ -41,7 +41,7 @@ export default function Hero() {
             </h1>
 
             <p className="type-lead mt-8 max-w-lg animate-fade-up [animation-delay:160ms]">
-              Karaköy&apos;de randevuyla çalışan tek kişilik bir stüdyo. Günde tek randevu, duvarda hazır
+              Tek kişilik, sadece randevuyla çalışan bir stüdyo. Günde tek randevu, duvarda hazır
               desen listesi yok — her çalışma konuşarak çıkan bir fikirden sıfırdan çizilir.
             </p>
 

@@ -6,7 +6,7 @@ import Prose from "@/components/ui/Prose";
 import DemoNotice from "@/components/ui/DemoNotice";
 import Badge from "@/components/ui/Badge";
 import { ArrowUpRight } from "@/components/ui/Icons";
-import { mailLink, site } from "@/data/site";
+import { site, whatsappLink } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
 
 const UPDATED = "18 Ağustos 2026";
@@ -212,8 +212,14 @@ export default function CerezPolitikasiPage() {
                 <h2 id="iletisim">İletişim</h2>
                 <p>
                   Çerezlerle ilgili sorularınız için{" "}
-                  <a href={mailLink}>{site.contact.email}</a> adresine yazabilirsiniz. Konu başlığına
-                  &quot;Çerez&quot; yazmanız yeterli.
+                  <a
+                    href={whatsappLink("Merhaba, çerezlerle ilgili bir sorum var.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp
+                  </a>
+                  &apos;tan yazabilirsiniz.
                 </p>
               </Prose>
 

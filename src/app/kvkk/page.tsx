@@ -5,7 +5,7 @@ import Section from "@/components/ui/Section";
 import Prose from "@/components/ui/Prose";
 import DemoNotice from "@/components/ui/DemoNotice";
 import { ArrowUpRight } from "@/components/ui/Icons";
-import { fullAddress, mailLink, site } from "@/data/site";
+import { site, whatsappLink } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
 
 const UPDATED = "1 Eylül 2026";
@@ -35,9 +35,12 @@ const sections = [
 
 const controller = [
   { label: "Unvan", value: site.legalName },
-  { label: "Adres", value: fullAddress },
-  { label: "E-posta", value: site.contact.email, href: mailLink },
-  { label: "Telefon", value: site.contact.phoneDisplay },
+  { label: "Konum", value: `${site.location.city}, ${site.location.countryName}` },
+  {
+    label: "WhatsApp",
+    value: site.contact.whatsappDisplay,
+    href: whatsappLink("Merhaba, KVKK başvurusu yapmak istiyorum."),
+  },
 ];
 
 export default function KvkkPage() {
@@ -255,10 +258,16 @@ export default function KvkkPage() {
                 </p>
                 <ul>
                   <li>
-                    E-posta: <a href={mailLink}>{site.contact.email}</a> — konu satırına
-                    &quot;KVKK Başvurusu&quot; yazın.
+                    WhatsApp:{" "}
+                    <a
+                      href={whatsappLink("Merhaba, KVKK başvurusu yapmak istiyorum.")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {site.contact.whatsappDisplay}
+                    </a>{" "}
+                    — mesajın başına &quot;KVKK Başvurusu&quot; yazın.
                   </li>
-                  <li>Yazılı olarak: {fullAddress}</li>
                 </ul>
                 <p>
                   Talebinizi, niteliğine göre en kısa sürede ve her hâlde mevzuatta öngörülen süre

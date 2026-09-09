@@ -52,13 +52,6 @@ export interface TattooStyle {
   order: number;
 }
 
-export interface Availability {
-  status: "open" | "limited" | "waitlist";
-  label: string;
-  /** Randevu formunda ve kartlarda gösterilecek kısa açıklama. */
-  detail: string;
-}
-
 export interface Artist {
   name: string;
   role: string;
@@ -72,7 +65,6 @@ export interface Artist {
   portrait: Media;
   /** İmza işler — works.ts içindeki id'ler. */
   featuredWorks: string[];
-  availability: Availability;
   /** İğne tutmaya başladığı yıl. */
   since: number;
   city: string;

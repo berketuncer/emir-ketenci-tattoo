@@ -1,6 +1,6 @@
 # Emir Ketenci — Dövme Stüdyosu Web Sitesi
 
-Karaköy'de **tek kişilik** bir dövme stüdyosu için hazırlanmış, üretime hazır yapıda bir tanıtım
+İstanbul'da **tek kişilik**, sadece randevuyla çalışan bir dövme stüdyosu için hazırlanmış, üretime hazır yapıda bir tanıtım
 sitesi. Stüdyoda yalnızca Emir Ketenci çalışır; site buna göre birinci tekil şahısla yazılmıştır.
 Tüm içerik şu an demo verisidir; gerçek içerik geldiğinde yalnızca `src/data` altındaki dosyaların
 değişmesi yeterlidir.
@@ -34,7 +34,7 @@ src/
 │   ├── hakkimda/             # kişisel tanıtım sayfası
 │   ├── stiller/[slug]/       # tarz detay
 │   ├── randevu/              # çok adımlı randevu talebi
-│   ├── studyo/ bakim/ sss/ iletisim/ hediye-karti/
+│   ├── bakim/ sss/ iletisim/
 │   └── gizlilik/ kvkk/ cerez-politikasi/ kullanim-kosullari/
 ├── components/
 │   ├── ui/                   # Button, Media, Section, Reveal, Accordion, PageHero…

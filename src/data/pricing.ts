@@ -7,7 +7,7 @@ import type { PricingTier } from "./types";
 export const pricingIntro = {
   title: "Fiyat neye göre belirleniyor?",
   description:
-    "Kesin fiyatı ancak fikri, ölçüyü ve bölgeyi gördükten sonra söyleyebilirim. Aşağıdaki aralıklar yön vermesi için; talebinizi gönderdiğinizde 48 saat içinde size özel net bir aralık paylaşıyorum.",
+    "Kesin fiyatı ancak fikri, ölçüyü ve bölgeyi gördükten sonra söyleyebilirim. Aşağıdaki aralıklar yön vermesi için; talebinizi gönderdiğinizde genelde birkaç gün içinde size özel net bir aralık yazıyorum.",
   factors: [
     { title: "Süre", description: "Uygulamanın kaç saat süreceği, ana belirleyici." },
     { title: "Detay", description: "Ton sayısı, dolgu yoğunluğu ve çizgi hassasiyeti." },

@@ -163,7 +163,7 @@ export default function OpengraphImage() {
               color: ASH,
             }}
           >
-            <div style={{ letterSpacing: 1 }}>Karaköy · İstanbul</div>
+            <div style={{ letterSpacing: 1 }}>İstanbul · Sadece randevuyla</div>
             <div style={{ letterSpacing: 1 }}>{site.domain}</div>
           </div>
         </div>

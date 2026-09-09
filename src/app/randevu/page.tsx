@@ -5,16 +5,14 @@ import BookingForm from "@/components/booking/BookingForm";
 import PageHero from "@/components/ui/PageHero";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
-import { ArrowUpRight, Clock, Shield, WhatsApp } from "@/components/ui/Icons";
-import Badge from "@/components/ui/Badge";
-import { artist, availabilityTone } from "@/data/artist";
+import { Clock, Shield, WhatsApp } from "@/components/ui/Icons";
 import { site, whatsappLink } from "@/data/site";
 import { breadcrumbSchema, pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
   title: "Randevu Talebi",
   description:
-    "Dövme fikrinizi kısa bir formda anlatın, WhatsApp'tan bana gönderin. Talebinizi 48 saat içinde değerlendirip size özel bir öneri ve fiyat aralığıyla dönüyorum.",
+    "Dövme fikrinizi kısa bir formda anlatın, WhatsApp'tan bana gönderin. Talebinizi genelde birkaç gün içinde değerlendirip size özel bir öneri ve fiyat aralığıyla dönüyorum.",
   path: "/randevu",
 });
 
@@ -22,7 +20,7 @@ const assurances = [
   {
     Icon: Clock,
     title: `Yanıt: ${site.booking.responseTime}`,
-    text: "Talebinizi okuyup tahmini seans sayısı ve fiyat aralığıyla dönüyorum.",
+    text: site.booking.responseNote,
   },
   {
     Icon: Shield,
@@ -98,23 +96,6 @@ export default function BookingPage() {
                 </ul>
 
                 <div className="mt-9">
-                  <p className="type-eyebrow">Güncel durum</p>
-                  <div className="mt-4 flex flex-col gap-3">
-                    <Badge tone={availabilityTone[artist.availability.status]} dot>
-                      {artist.availability.label}
-                    </Badge>
-                    <p className="type-body text-[0.875rem]">{artist.availability.detail}</p>
-                    <Link
-                      href="/hakkimda"
-                      className="group inline-flex items-center gap-2 text-sm text-ash transition-colors hover:text-bone"
-                    >
-                      {artist.name} hakkında
-                      <ArrowUpRight className="h-4 w-4 text-ash-deep transition-colors group-hover:text-bone" />
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="mt-9 border-t border-[var(--hairline)] pt-7">
                   <p className="type-eyebrow">Doğrudan iletişim</p>
                   <div className="mt-4 flex flex-col gap-2.5 text-sm">
                     <a
@@ -124,12 +105,6 @@ export default function BookingPage() {
                       className="text-ash transition-colors hover:text-bone"
                     >
                       WhatsApp · {site.contact.whatsappDisplay}
-                    </a>
-                    <a
-                      href={`mailto:${site.contact.email}`}
-                      className="text-ash transition-colors hover:text-bone"
-                    >
-                      {site.contact.email}
                     </a>
                     <Link href="/sss" className="text-ash transition-colors hover:text-bone">
                       Önce sık sorulanlara bakın →

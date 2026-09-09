@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { artist } from "@/data/artist";
 import { faqItems } from "@/data/faq";
-import { fullAddress, site } from "@/data/site";
+import { site } from "@/data/site";
 
 const OG_IMAGE = "/og.png";
 
@@ -40,7 +40,11 @@ export function pageMeta({ title, description, path = "/", image = OG_IMAGE, typ
   };
 }
 
-/** Stüdyo için schema.org TattooParlor verisi. */
+/**
+ * Stüdyo için schema.org TattooParlor verisi. Adres, koordinat ve çalışma
+ * saati bilinçli olarak yok: sadece randevuyla çalışılıyor. Bu yüzden
+ * Google'ın harita kartı çıkmaz; uydurma bir pin çıkmasından iyidir.
+ */
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
@@ -49,33 +53,11 @@ export function localBusinessSchema() {
     name: site.legalName,
     alternateName: site.name,
     url: site.url,
-    telephone: site.contact.phone,
-    email: site.contact.email,
+    telephone: site.contact.whatsapp,
     description: site.description,
     image: new URL(OG_IMAGE, site.url).toString(),
     priceRange: "₺₺",
     foundingDate: String(site.founded),
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: `${site.address.street}, ${site.address.district}`,
-      addressLocality: site.address.city,
-      addressRegion: site.address.region,
-      postalCode: site.address.postalCode,
-      addressCountry: site.address.country,
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: site.address.geo.lat,
-      longitude: site.address.geo.lng,
-    },
-    openingHoursSpecification: site.hours
-      .filter((h) => !("closed" in h && h.closed))
-      .map((h) => ({
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: h.day,
-        opens: h.value.split("–")[0]?.trim(),
-        closes: h.value.split("–")[1]?.trim(),
-      })),
     sameAs: site.social.map((s) => s.href),
     founder: {
       "@type": "Person",
@@ -119,9 +101,8 @@ export function personSchema() {
     knowsAbout: [...artist.focusStyles, ...artist.otherStyles],
     address: {
       "@type": "PostalAddress",
-      addressLocality: site.address.city,
-      addressRegion: site.address.region,
-      addressCountry: site.address.country,
+      addressLocality: site.location.city,
+      addressCountry: site.location.country,
     },
   };
 }
@@ -138,5 +119,3 @@ export function breadcrumbSchema(trail: { name: string; path: string }[]) {
     })),
   };
 }
-
-export const addressText = fullAddress;

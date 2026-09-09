@@ -5,7 +5,7 @@ import Section from "@/components/ui/Section";
 import Prose from "@/components/ui/Prose";
 import DemoNotice from "@/components/ui/DemoNotice";
 import { ArrowUpRight } from "@/components/ui/Icons";
-import { fullAddress, mailLink, site } from "@/data/site";
+import { site, whatsappLink } from "@/data/site";
 import { pageMeta } from "@/lib/seo";
 
 const UPDATED = "1 Eylül 2026";
@@ -216,7 +216,15 @@ export default function GizlilikPage() {
                   <li>Verdiğiniz onayı geri almak veya belirli bir işlemeye itiraz etmek.</li>
                 </ul>
                 <p>
-                  Talebinizi <a href={mailLink}>{site.contact.email}</a> adresine iletin; kimliğinizi
+                  Talebinizi{" "}
+                  <a
+                    href={whatsappLink("Merhaba, kişisel verilerimle ilgili bir talebim var.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp
+                  </a>{" "}
+                  üzerinden iletin; kimliğinizi
                   teyit ettikten sonra en kısa sürede dönüş yaparız. Başvuru usulünün ayrıntısı{" "}
                   <Link href="/kvkk">KVKK Aydınlatma Metni</Link> sayfasındadır.
                 </p>
@@ -240,9 +248,12 @@ export default function GizlilikPage() {
                 <p>
                   {site.legalName}
                   <br />
-                  {fullAddress}
+                  {site.location.city}, {site.location.countryName}
                   <br />
-                  <a href={mailLink}>{site.contact.email}</a> · {site.contact.phoneDisplay}
+                  WhatsApp:{" "}
+                  <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+                    {site.contact.whatsappDisplay}
+                  </a>
                 </p>
               </Prose>
 

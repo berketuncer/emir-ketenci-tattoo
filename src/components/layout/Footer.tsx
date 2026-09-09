@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import Button from "@/components/ui/Button";
-import { ArrowUpRight, Clock, Mail, MapPin, Phone } from "@/components/ui/Icons";
+import { ArrowUpRight, Instagram, MapPin, WhatsApp } from "@/components/ui/Icons";
 import { artist } from "@/data/artist";
-import { fullAddress, mailLink, phoneLink, site, whatsappLink } from "@/data/site";
+import { site, whatsappLink } from "@/data/site";
 import { styles } from "@/data/styles";
 
 export default function Footer() {
@@ -89,29 +89,33 @@ export default function Footer() {
             <h3 className="type-eyebrow mb-6">İletişim</h3>
             <ul className="flex flex-col gap-4 text-sm">
               <li>
-                <a href={mailLink} className="group flex items-start gap-3 text-ash transition-colors hover:text-bone">
-                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-ash-deep transition-colors group-hover:text-ember" />
-                  {site.contact.email}
-                </a>
-              </li>
-              <li>
-                <a href={phoneLink} className="group flex items-start gap-3 text-ash transition-colors hover:text-bone">
-                  <Phone className="mt-0.5 h-4 w-4 shrink-0 text-ash-deep transition-colors group-hover:text-ember" />
-                  {site.contact.phoneDisplay}
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-3 text-ash transition-colors hover:text-bone"
+                >
+                  <WhatsApp className="mt-0.5 h-4 w-4 shrink-0 text-ash-deep transition-colors group-hover:text-ember" />
+                  {site.contact.whatsappDisplay}
                 </a>
               </li>
               <li>
                 <a
-                  href="/iletisim"
+                  href={site.social[0].href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-start gap-3 text-ash transition-colors hover:text-bone"
                 >
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-ash-deep transition-colors group-hover:text-ember" />
-                  <span>{fullAddress}</span>
+                  <Instagram className="mt-0.5 h-4 w-4 shrink-0 text-ash-deep transition-colors group-hover:text-ember" />
+                  {site.social[0].handle}
                 </a>
               </li>
               <li className="flex items-start gap-3 text-ash">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-ash-deep" />
-                <span>{site.hoursSummary}</span>
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-ash-deep" />
+                <span>
+                  {site.location.short}
+                  <span className="mt-1 block text-ash-dim">Konum, randevu kesinleşince paylaşılır.</span>
+                </span>
               </li>
             </ul>
           </div>
@@ -119,7 +123,7 @@ export default function Footer() {
 
         {/* Kim çalışıyor */}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[var(--hairline)] py-8">
-          <span className="type-eyebrow">Stüdyoda</span>
+          <span className="type-eyebrow">Tek kişi</span>
           <Link href="/hakkimda" className="text-sm text-ash transition-colors hover:text-bone">
             {artist.name} — {artist.role}
           </Link>
@@ -143,8 +147,7 @@ export default function Footer() {
         </div>
 
         <p className="pb-10 text-xs leading-relaxed text-ash-deep">
-          Bu site bir tanıtım demosudur. Çalışmalar, yorumlar ve iletişim bilgileri örnek
-          içeriktir.
+          Sitedeki çalışma görselleri geçici örnekler; gerçek işler için Instagram&apos;a bakın.
         </p>
       </div>
     </footer>

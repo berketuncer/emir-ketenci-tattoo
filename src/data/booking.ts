@@ -33,7 +33,6 @@ export const projectTypes = [
   { value: "yeni", label: "Yeni dövme", hint: "Sıfırdan bir çalışma" },
   { value: "cover-up", label: "Kapatma (cover-up)", hint: "Mevcut bir dövmenin üzerine" },
   { value: "tamamlama", label: "Devam / tamamlama", hint: "Var olan bir işi büyütmek" },
-  { value: "hediye-karti", label: "Hediye kartı", hint: "Başkası için hediye" },
 ];
 
 export const palettes = [

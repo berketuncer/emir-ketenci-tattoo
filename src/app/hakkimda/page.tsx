@@ -5,11 +5,11 @@ import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import Media from "@/components/ui/Media";
 import Reveal from "@/components/ui/Reveal";
-import Badge from "@/components/ui/Badge";
 import WorkGallery from "@/components/work/WorkGallery";
 import { ArrowRight, ArrowUpRight, Check, Instagram } from "@/components/ui/Icons";
-import { artist, availabilityTone, yearsActive } from "@/data/artist";
+import { artist, yearsActive } from "@/data/artist";
 import { site, whatsappLink } from "@/data/site";
+import { hygieneChecklist } from "@/data/studio";
 import { styleName, styles } from "@/data/styles";
 import { works } from "@/data/works";
 import { breadcrumbSchema, pageMeta, personSchema } from "@/lib/seo";
@@ -17,7 +17,7 @@ import { breadcrumbSchema, pageMeta, personSchema } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Hakkımda",
   description:
-    "Emir Ketenci — Karaköy'de tek kişilik dövme stüdyosu. Fine line, mikro realizm, blackwork ve geometrik çalışmalar; 2014'ten beri iğne tutuyor, günde tek randevu alıyor.",
+    "Emir Ketenci — İstanbul'da tek kişilik, sadece randevuyla çalışan dövme stüdyosu. Fine line, mikro realizm, blackwork ve geometrik çalışmalar; 2014'ten beri iğne tutuyor, günde tek randevu alıyor.",
   path: "/hakkimda",
   image: artist.portrait.src,
   type: "profile",
@@ -55,12 +55,7 @@ export default function AboutPage() {
         description={
           <>
             <span className="block">{artist.tagline}</span>
-            <span className="mt-6 flex flex-wrap items-center gap-3">
-              <Badge tone={availabilityTone[artist.availability.status]} dot>
-                {artist.availability.label}
-              </Badge>
-              <span className="text-sm text-ash-dim">{artist.availability.detail}</span>
-            </span>
+            <span className="mt-6 block text-sm text-ash-dim">{site.location.short}</span>
           </>
         }
         actions={
@@ -130,6 +125,40 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      {/* Hijyen ve güven */}
+      <Section spacing="sm" className="border-t border-[var(--hairline)]">
+        <div className="container-page">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
+            <div className="lg:col-span-5">
+              <Reveal>
+                <p className="type-eyebrow flex items-center gap-3">
+                  <span aria-hidden className="h-px w-8 bg-[var(--hairline-strong)]" />
+                  Hijyen ve güven
+                </p>
+                <h2 className="type-h3 mt-6 text-bone">Güven, tasarımdan önce gelir.</h2>
+                <p className="type-body mt-4 max-w-md">
+                  Dövme geri alınamaz; o yüzden malzeme, yüzey ve süreç konusunda pazarlık yok.
+                  Hepsi önünüzde açılır, önünüzde uygulanır.
+                </p>
+                <p className="type-body mt-4 max-w-md text-[0.9375rem]">{site.location.note}</p>
+              </Reveal>
+            </div>
+            <div className="lg:col-span-7">
+              <Reveal delay={90}>
+                <ul className="grid gap-px border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-2">
+                  {hygieneChecklist.map((item) => (
+                    <li key={item} className="flex gap-3 bg-ink p-5 text-[0.9375rem] leading-relaxed text-ash">
+                      <Check className="mt-1 h-4 w-4 shrink-0 text-ember" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* Kilometre taşları */}
       <Section spacing="sm" className="border-t border-[var(--hairline)]">
         <div className="container-page">
@@ -138,7 +167,7 @@ export default function AboutPage() {
               <Reveal>
                 <h2 className="type-h3 text-bone">Kısa künye</h2>
                 <p className="type-body mt-4 max-w-xs text-[0.9375rem]">
-                  {years} yıldır iğne tutuyorum; {site.currentYear - site.founded} yıldır kendi stüdyomdayım.
+                  {years} yıldır iğne tutuyorum; {site.currentYear - site.founded} yıldır kendi başıma.
                 </p>
               </Reveal>
             </div>

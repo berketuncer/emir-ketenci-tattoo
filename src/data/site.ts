@@ -5,7 +5,8 @@ import type { NavItem } from "./types";
  * güncellenir; başlıklar, footer, schema.org verisi ve iletişim bağlantıları
  * buradan beslenir.
  *
- * NOT: Aşağıdaki iletişim bilgileri demo amaçlıdır.
+ * Tek iletişim kanalı WhatsApp; adres, çalışma saati ve e-posta bilinçli
+ * olarak yok. Konum, randevu kesinleşince ziyaretçiye birebir yazılır.
  */
 export const site = {
   name: "Emir Ketenci",
@@ -30,44 +31,27 @@ export const site = {
 
   tagline: "Kalıcı olanı acele etmeden çiziyorum.",
   description:
-    "Karaköy'de randevuyla çalışan tek kişilik bir dövme stüdyosu. Fine line, mikro realizm, blackwork ve geometrik çalışmalar; günde tek randevu, kişiye özel tasarım.",
+    "İstanbul'da, sadece randevuyla çalışan tek kişilik bir dövme stüdyosu. Fine line, mikro realizm, blackwork ve geometrik çalışmalar; günde tek randevu, kişiye özel tasarım.",
   shortDescription:
-    "Karaköy'de tek kişilik özel stüdyo. Fine line, mikro realizm, blackwork ve geometrik çalışmalar.",
+    "İstanbul'da tek kişilik, sadece randevuyla çalışan stüdyo. Fine line, mikro realizm, blackwork ve geometrik çalışmalar.",
 
+  /** Tek kanal. Arama ve e-posta yok: WhatsApp asenkron, ne zaman bakılacağı Emir'e kalmış. */
   contact: {
-    phone: "+90 533 431 53 48",
-    phoneDisplay: "+90 533 431 53 48",
     whatsapp: "+90 533 431 53 48",
     whatsappDisplay: "+90 533 431 53 48",
-    email: "merhaba@emirketenci.com",
-    pressEmail: "basin@emirketenci.com",
   },
 
-  address: {
-    street: "Mumhane Caddesi No: 47, Kat 3",
-    district: "Kemankeş Karamustafa Paşa Mah.",
-    city: "Karaköy, Beyoğlu",
-    region: "İstanbul",
-    postalCode: "34425",
+  /**
+   * Adres, harita ve çalışma saati yok — bilinçli. Sadece randevuyla
+   * çalışılıyor; konum, randevu kesinleşince ziyaretçiye yazılıyor.
+   */
+  location: {
+    city: "İstanbul",
     country: "TR",
     countryName: "Türkiye",
-    /** Karaköy merkez — harita ve schema.org için. */
-    geo: { lat: 41.0246, lng: 28.9772 },
-    directions:
-      "Tophane tramvay durağına 4 dakika, Karaköy iskelesine 6 dakika yürüme mesafesinde. Bina girişinde zil paneli, stüdyo 3. katta.",
+    short: "Sadece randevuyla · İstanbul",
+    note: "Sessiz bir yerde, sadece randevuyla çalışıyorum. Konumu randevu kesinleşince yazıyorum; gelmeden önce zaten her şeyi konuşmuş oluyoruz.",
   },
-
-  hours: [
-    { day: "Pazartesi", value: "Kapalı", closed: true },
-    { day: "Salı", value: "12:00 – 21:00" },
-    { day: "Çarşamba", value: "12:00 – 21:00" },
-    { day: "Perşembe", value: "12:00 – 21:00" },
-    { day: "Cuma", value: "12:00 – 21:00" },
-    { day: "Cumartesi", value: "11:00 – 20:00" },
-    { day: "Pazar", value: "Kapalı", closed: true },
-  ],
-
-  hoursSummary: "Salı – Cuma 12:00–21:00 · Cumartesi 11:00–20:00 · Pazar ve Pazartesi kapalı",
 
   social: [
     { label: "Instagram", handle: "@emirketenci.tattoo", href: "https://instagram.com/emirketenci.tattoo" },
@@ -80,16 +64,14 @@ export const site = {
     { label: "Çalışmalar", href: "/calismalar", description: "Portfolyo ve tarz filtreleri" },
     { label: "Stiller", href: "/stiller", description: "Hangi tarz size uygun?" },
     { label: "Hakkımda", href: "/hakkimda", description: "Kimim, nasıl çalışıyorum" },
-    { label: "Stüdyo", href: "/studyo", description: "Mekân, hijyen ve süreç" },
     { label: "SSS", href: "/sss", description: "Sık sorulan sorular" },
-    { label: "İletişim", href: "/iletisim", description: "Adres, saatler, ulaşım" },
+    { label: "İletişim", href: "/iletisim", description: "WhatsApp ve Instagram" },
   ] satisfies NavItem[],
 
   /** Menüde ikinci sıra — mobil menüde ve footer'da gösterilir. */
   secondaryNav: [
     { label: "Bakım Rehberi", href: "/bakim" },
     { label: "Fiyatlandırma", href: "/sss#fiyat" },
-    { label: "Hediye Kartı", href: "/hediye-karti" },
   ] satisfies NavItem[],
 
   legalNav: [
@@ -102,8 +84,10 @@ export const site = {
   booking: {
     href: "/randevu",
     label: "Randevu Al",
-    /** Ortalama dönüş süresi — formda ve CTA'larda kullanılır. */
-    responseTime: "48 saat içinde",
+    /** Dönüş süresi — az vaat edilir, tutulur. Formda ve CTA'larda kullanılır. */
+    responseTime: "genelde birkaç gün içinde",
+    /** Beklentiyi samimi kuran tek cümle. */
+    responseNote: "Mesajlara toplu bakıyorum; hemen dönemezsem unutmuş değilim, sıradasınız.",
     depositNote: "Randevu, tasarım onayından sonra alınan kapora ile kesinleşir.",
   },
 
@@ -116,10 +100,3 @@ export const whatsappLink = (message?: string) => {
   const text = message ?? "Merhaba, bir dövme fikrim var. Konuşabilir miyiz?";
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 };
-
-export const phoneLink = `tel:${site.contact.phone.replace(/[^0-9+]/g, "")}`;
-export const mailLink = `mailto:${site.contact.email}`;
-
-export const mapsLink = `https://www.openstreetmap.org/?mlat=${site.address.geo.lat}&mlon=${site.address.geo.lng}#map=17/${site.address.geo.lat}/${site.address.geo.lng}`;
-
-export const fullAddress = `${site.address.street}, ${site.address.district}, ${site.address.city}, ${site.address.region}`;

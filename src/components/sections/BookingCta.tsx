@@ -31,8 +31,8 @@ export default function BookingCta() {
             Aklınızdaki fikri <span className="italic text-ash">bugün</span> anlatın.
           </h2>
           <p className="type-lead mx-auto mt-6 max-w-xl">
-            Beş kısa adım, ortalama üç dakika. Net bir fikriniz olması gerekmiyor —
-            {" "}{site.booking.responseTime} size özel bir değerlendirmeyle dönüyoruz.
+            Üç kısa bölüm, birkaç dakika. Net bir fikriniz olması gerekmiyor —
+            {" "}{site.booking.responseTime} size özel bir değerlendirmeyle dönüyorum.
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">

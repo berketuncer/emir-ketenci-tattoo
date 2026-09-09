@@ -8,7 +8,7 @@ import { site } from "@/data/site";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
-    name: `${site.name} — Karaköy Dövme ve Tasarım Stüdyosu`,
+    name: `${site.name} — Dövme ve Tasarım Stüdyosu · İstanbul`,
     short_name: site.name,
     description: site.shortDescription,
     lang: "tr",
