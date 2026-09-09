@@ -9,7 +9,7 @@ export const processSteps: ProcessStep[] = [
     title: "Fikrinizi gönderin",
     summary: "Formdan aklınızdaki fikri, ölçüyü ve bölgeyi paylaşın.",
     detail:
-      "Net bir fikrinizin olması şart değil. Bir referans, bir cümle ya da sadece \"şuraya bir şey istiyorum\" da yeterli. Ne kadar çok bağlam verirseniz, ilk dönüşümüz o kadar isabetli olur.",
+      "Net bir fikrinizin olması şart değil. Bir referans, bir cümle ya da sadece \"şuraya bir şey istiyorum\" da yeterli. Ne kadar çok bağlam verirseniz, ilk cevabım o kadar isabetli olur.",
     duration: "5 dakika",
   },
   {

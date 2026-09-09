@@ -70,7 +70,7 @@ export default function AftercarePage() {
         eyebrow="Bakım"
         crumbs={[{ label: "Ana Sayfa", href: "/" }, { label: "Bakım Rehberi" }]}
         title="Dövme bakım rehberi"
-        description="İyileşmenin nasıl ilerlediğini, hangi hafta neye dikkat etmen gerektiğini ve neyin normal olmadığını tek sayfada topladık."
+        description="İyileşmenin nasıl ilerlediğini, hangi hafta neye dikkat etmen gerektiğini ve neyin normal olmadığını tek sayfada topladım."
         aside={
           <Reveal delay={120}>
             <div className="border border-[var(--hairline-strong)] bg-ink-900 p-6 sm:p-7">
@@ -184,7 +184,7 @@ export default function AftercarePage() {
                 <h2 className="type-h2 mt-5 text-bone">Ne zaman doktora başvurmalı</h2>
                 <p className="type-body mt-5 max-w-sm">
                   İyileşme çoğu zaman sorunsuz ilerler. Aşağıdakilerden biri olursa bekleme —
-                  hem bize yaz hem bir sağlık kuruluşuna başvur.
+                  hem bana yaz hem bir sağlık kuruluşuna başvur.
                 </p>
               </div>
 

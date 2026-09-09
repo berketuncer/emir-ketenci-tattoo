@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import BookingForm from "@/components/booking/BookingForm";
+import NotDoing from "@/components/booking/NotDoing";
 import PageHero from "@/components/ui/PageHero";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
@@ -65,6 +66,7 @@ export default function BookingPage() {
         <div className="container-page">
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7 xl:col-span-8">
+              <NotDoing />
               <Suspense
                 fallback={
                   <div className="flex flex-col gap-4" aria-busy="true" aria-live="polite">

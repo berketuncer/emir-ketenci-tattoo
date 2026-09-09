@@ -309,7 +309,7 @@ export default async function StyleDetailPage({ params }: PageProps<"/stiller/[s
                 <h2 className="type-h2 text-bone">{style.name} için ilk adım</h2>
                 <p className="type-lead mt-5 max-w-lg">
                   Formda tarz zaten seçili gelir. Fikrinizi, bölgeyi ve yaklaşık ölçüyü yazmanız yeterli;
-                  dönüşümüz {site.booking.responseTime}.
+                  {site.booking.responseTime} dönüyorum.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 lg:justify-end">

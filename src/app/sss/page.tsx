@@ -6,7 +6,7 @@ import Accordion from "@/components/ui/Accordion";
 import PageHero from "@/components/ui/PageHero";
 import { ArrowRight } from "@/components/ui/Icons";
 import { faqByCategory, faqCategories, faqItems } from "@/data/faq";
-import { pricingNotes, pricingTiers } from "@/data/pricing";
+import { pricingNotes } from "@/data/pricing";
 import { site, whatsappLink } from "@/data/site";
 import type { FaqCategory } from "@/data/types";
 import { breadcrumbSchema, faqSchema, pageMeta } from "@/lib/seo";
@@ -52,7 +52,7 @@ export default function SssPage() {
         description={
           <>
             Fiyattan iyileşme sürecine kadar en çok sorulan {faqItems.length} soruyu beş başlıkta
-            topladık. Cevaplar kısa ve dürüst; aradığınızı bulamazsanız bir mesaj uzağındayız.
+            topladım. Cevaplar kısa ve dürüst; aradığınızı bulamazsanız bir mesaj uzağındayım.
           </>
         }
       />
@@ -118,58 +118,17 @@ export default function SssPage() {
                     <Reveal className="mt-14">
                       <div className="border border-[var(--hairline)]">
                         <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-[var(--hairline)] px-5 py-4 sm:px-7">
-                          <h3 className="text-[0.9375rem] font-medium text-bone">Fiyat aralıkları</h3>
-                          <p className="type-eyebrow">Yön vermesi için</p>
+                          <h3 className="text-[0.9375rem] font-medium text-bone">Sabit fiyat yok</h3>
+                          <p className="type-eyebrow">Değişmeyen kurallar</p>
                         </div>
-
-                        <div className="overflow-x-auto">
-                          <table className="w-full min-w-[36rem] border-collapse text-left">
-                            <caption className="sr-only">
-                              Emir Ketenci çalışma ölçeklerine göre fiyat aralıkları
-                            </caption>
-                            <thead>
-                              <tr className="border-b border-[var(--hairline)]">
-                                <th scope="col" className="type-eyebrow px-5 py-3 font-normal sm:px-7">
-                                  Ölçek
-                                </th>
-                                <th scope="col" className="type-eyebrow px-5 py-3 font-normal sm:px-7">
-                                  Kapsam
-                                </th>
-                                <th
-                                  scope="col"
-                                  className="type-eyebrow px-5 py-3 text-right font-normal sm:px-7"
-                                >
-                                  Aralık
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {pricingTiers.map((tier) => (
-                                <tr
-                                  key={tier.id}
-                                  className="border-b border-[var(--hairline)] align-top last:border-b-0"
-                                >
-                                  <th
-                                    scope="row"
-                                    className="px-5 py-6 text-sm font-medium text-bone sm:px-7"
-                                  >
-                                    {tier.name}
-                                  </th>
-                                  <td className="max-w-sm px-5 py-6 text-[0.875rem] leading-relaxed text-ash sm:px-7">
-                                    {tier.description}
-                                  </td>
-                                  <td className="whitespace-nowrap px-5 py-6 text-right font-[family-name:var(--font-display)] text-xl leading-none text-bone sm:px-7">
-                                    {tier.range}
-                                  </td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <ul className="flex flex-wrap gap-x-6 gap-y-2 border-t border-[var(--hairline)] px-5 py-4 sm:px-7">
+                        <p className="type-body px-5 py-5 text-[0.9375rem] sm:px-7">
+                          Rakamı fikri, ölçüyü ve bölgeyi görünce söylüyorum; bir kez, net. Değişmeyenler
+                          şunlar:
+                        </p>
+                        <ul className="flex flex-col gap-2.5 border-t border-[var(--hairline)] px-5 py-5 sm:px-7">
                           {pricingNotes.map((note) => (
-                            <li key={note} className="text-xs text-ash-deep">
+                            <li key={note} className="flex items-start gap-2.5 text-sm text-ash">
+                              <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-ember" />
                               {note}
                             </li>
                           ))}
@@ -190,8 +149,8 @@ export default function SssPage() {
             <p className="type-eyebrow">Hâlâ aklında bir şey var</p>
             <h2 className="type-h2 mt-6 text-bone">Cevabını bulamadın mı?</h2>
             <p className="type-lead mx-auto mt-5 max-w-xl">
-              Listede olmayan her soru bizim için değerli — çoğu zaman yeni bir başlık olarak buraya
-              ekleniyor. Kısa bir mesaj yazın, sizi oyalamadan cevaplayalım.
+              Listede olmayan her soru benim için değerli — çoğu zaman yeni bir başlık olarak buraya
+              ekleniyor. Kısa bir mesaj yazın, sırası gelince cevaplıyorum.
             </p>
 
             <div className="mt-10 flex flex-wrap justify-center gap-3">

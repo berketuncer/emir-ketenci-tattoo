@@ -144,16 +144,6 @@ export interface StudioValue {
   description: string;
 }
 
-export interface PricingTier {
-  id: string;
-  name: string;
-  range: string;
-  description: string;
-  includes: string[];
-  note?: string;
-  highlighted?: boolean;
-}
-
 export interface NavItem {
   label: string;
   href: string;

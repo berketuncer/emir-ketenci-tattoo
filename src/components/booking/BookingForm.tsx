@@ -166,7 +166,7 @@ export default function BookingForm() {
         <div className="flex h-14 w-14 items-center justify-center rounded-full border border-signal/40 bg-signal/10">
           <WhatsApp className="h-7 w-7 text-signal" />
         </div>
-        <h2 className="type-h2 mt-8 text-bone">WhatsApp&apos;ı açtık.</h2>
+        <h2 className="type-h2 mt-8 text-bone">WhatsApp&apos;ı açtım.</h2>
         <p className="type-lead mt-5 max-w-lg">
           {values.name.trim() ? `${values.name.trim()}, ` : ""}talebiniz hazır bir mesaj olarak
           dolduruldu — <strong className="font-medium text-bone">göndermeyi unutmayın</strong>.

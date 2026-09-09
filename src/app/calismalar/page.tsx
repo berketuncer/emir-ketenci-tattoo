@@ -113,7 +113,7 @@ export default function WorksPage() {
                 <h3 className="type-h3 mt-5 text-bone">Eski bir dövmenin üzerine</h3>
                 <p className="type-body mt-4 max-w-md">
                   Kapatma işlerinde eski hattı silmeye çalışmak yerine, onu yeni kompozisyonun
-                  parçası yapıyoruz. Fotoğrafı gönderin; boyut, koyuluk ve yaş neyin mümkün
+                  parçası yapıyorum. Fotoğrafı gönderin; boyut, koyuluk ve yaş neyin mümkün
                   olduğunu birlikte belirlesin.
                 </p>
 
@@ -161,7 +161,7 @@ export default function WorksPage() {
                 <p className="type-body mt-4 max-w-md">
                   Doğrusu da bu: her çalışma sıfırdan çiziliyor, arşivdeki hiçbir tasarım ikinci
                   kez uygulanmıyor. Fikrinizi yazın, {site.booking.responseTime} size özel bir
-                  değerlendirmeyle dönelim.
+                  değerlendirmeyle döneyim.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">

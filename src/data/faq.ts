@@ -21,7 +21,7 @@ export const faqItems: FaqItem[] = [
     category: "fiyat",
     question: "Minimum ücret var mı?",
     answer:
-      "Evet. En küçük çalışma için minimum ücretim 2.500 TL'dir. Bu, tek kullanımlık malzeme, sterilizasyon ve hazırlık süresinin karşılığıdır; dövmenin fiziksel boyutundan bağımsızdır.",
+      "Sabit bir liste fiyatım yok; her işi fikri, ölçüyü ve bölgeyi görünce fiyatlandırıyorum. Şunu baştan söyleyeyim: en küçük işte bile tek kullanımlık malzeme, sterilizasyon ve hazırlık süresi var — yani 'iki dakikalık iş' diye bir şey yok. Rakamı yazışırken net söylerim, sürpriz olmaz.",
   },
   {
     id: "f-03",
@@ -112,7 +112,7 @@ export const faqItems: FaqItem[] = [
     category: "uygulama",
     question: "Dövme öncesinde nelere dikkat etmeliyim?",
     answer:
-      "İyi uyuyun, aç gelmeyin ve seanstan 24 saat önce alkol almayın. Bol, rahat ve bölgeye erişimi kolay kıyafet giyin. Kan sulandırıcı kullanıyorsanız ya da kronik bir rahatsızlığınız varsa önceden bildirin. Yanınıza atıştırmalık ve su almanızı öneriyoruz.",
+      "İyi uyuyun, aç gelmeyin ve seanstan 24 saat önce alkol almayın. Bol, rahat ve bölgeye erişimi kolay kıyafet giyin. Kan sulandırıcı kullanıyorsanız ya da kronik bir rahatsızlığınız varsa önceden bildirin. Yanınıza atıştırmalık ve su almanızı öneririm.",
   },
   {
     id: "f-16",

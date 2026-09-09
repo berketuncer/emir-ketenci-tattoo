@@ -10,7 +10,7 @@ export default function FeaturedWorks() {
       <div className="container-page">
         <SectionHeader
           eyebrow="Öne çıkan çalışmalar"
-          title="Son dönemde tamamladıklarımız"
+          title="Son dönemde bitirdiklerim"
           description="Her parça tek bir kişi için çizildi. Detayına bakmak için üzerine dokunun."
           action={
             <Button href="/calismalar" variant="secondary" icon={<ArrowUpRight className="h-4 w-4" />}>
