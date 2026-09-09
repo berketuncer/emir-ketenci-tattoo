@@ -52,15 +52,32 @@ Bileşenlerin hiçbirinde sabit içerik yoktur. Değiştirmeniz gereken dosyalar
 
 | Dosya | İçerik |
 | --- | --- |
-| `src/data/site.ts` | Marka adı, adres, telefon, saatler, menü, sosyal hesaplar |
-| `src/data/artist.ts` | Emir Ketenci: biyografi, prensipler, müsaitlik, kilometre taşları |
+| `src/data/site.ts` | Marka adı, WhatsApp numarası, konum notu, menü, sosyal hesaplar, dönüş süresi |
+| `src/data/artist.ts` | Emir Ketenci: biyografi, prensipler, kilometre taşları |
 | `src/data/works.ts` | Portfolyo |
 | `src/data/styles.ts` | Dövme tarzları |
-| `src/data/testimonials.ts` | Müşteri yorumları |
 | `src/data/faq.ts` | Sık sorulan sorular |
-| `src/data/pricing.ts` | Fiyat aralıkları |
-| `src/data/process.ts`, `aftercare.ts`, `studio.ts`, `giftcard.ts` | Süreç, bakım, atölye, hediye kartı |
+| `src/data/pricing.ts` | Fiyatı neyin belirlediği ve değişmeyen kurallar (rakam yok) |
+| `src/data/process.ts`, `aftercare.ts`, `studio.ts` | Süreç, bakım, hijyen ve çalışma kuralları |
 | `src/data/booking.ts` | Randevu formundaki seçenek listeleri |
+| `src/data/wannado.ts` | "Şu aralar" — o dönem çizmek istediği iş; son günü geçince kendiliğinden kalkar |
+| `src/data/limits.ts` | "Yapmadıklarım" — randevu formunun üstündeki liste; boşken görünmez |
+
+Bilinçli olarak **olmayanlar:** adres, harita, çalışma saati, e-posta, telefonla arama, müşteri
+yorumları, sabit fiyat. Sadece randevuyla çalışılıyor; konum randevu kesinleşince WhatsApp'tan
+yazılıyor. Tek iletişim kanalı WhatsApp.
+
+### Emir'den içerik gelince
+
+| Gelen | Dosya | Yapılacak |
+| --- | --- | --- |
+| Yapmadıklarım listesi | `src/data/limits.ts` | Satırları `notDoing` dizisine yaz |
+| Şu aralar çizmek istediği iş | `src/data/wannado.ts` | `title` ve `body`'yi yaz, `until`'ı ileri al |
+| Biyografi, yıllar | `src/data/artist.ts` | `bio`, `since`, `milestones` |
+| Instagram / Pinterest / Behance | `src/data/site.ts` → `social` | Kullanıcı adı ve bağlantı |
+| Fotoğraflar | `src/data/works.ts` + `public/img/works/` | `media.src` alanlarını gerçek dosyalarla değiştir; footer'daki "görseller geçici" notunu sil |
+
+Hepsi veri değişikliği; `main`'e push yeterli, kod dokunuşu gerekmez.
 
 Tipler `src/data/types.ts` içinde. Bir CMS'e ya da API'ye geçildiğinde bu dosyaların yerine
 aynı tipleri döndüren fonksiyonlar konması yeterlidir.
@@ -82,12 +99,15 @@ olarak `next/image` ile servis eder; oran bilgisi verildiği için yerleşim kay
 
 ## Randevu formu
 
-`src/components/booking/BookingForm.tsx` beş adımlı bir akış yürütür: fikir → ölçü ve bölge →
-referanslar → tarih ve bütçe → iletişim. Adım bazlı doğrulama, taslak saklama (localStorage),
-sürükle-bırak görsel yükleme, özet ve başarı/hata durumları hazırdır.
+`src/components/booking/BookingForm.tsx` tek ekranda üç bölümdür: fikir → ölçü ve bölge →
+sen ve zamanlama. Sunucu yoktur ve bilinçli olarak istenmez: form, alanları hazır bir WhatsApp
+mesajına çevirip `wa.me` üzerinden ziyaretçinin kendi WhatsApp'ına aktarır; talep doğrudan
+telefona düşer, sitede hiçbir şey saklanmaz. Bütçe sorulmaz (rakamı Emir fikri görünce söyler);
+telefon ve e-posta sorulmaz (WhatsApp'la zaten gelir). Referans görselleri ziyaretçi sohbete
+kendisi ekler — `wa.me` bağlantısı dosya taşıyamaz.
 
-Şu an sunucu yoktur; `submit()` içindeki bekleme simülasyonunun yerine kendi API çağrınızı
-koyduğunuzda akış olduğu gibi çalışır. Yüklenen görseller tarayıcıdan çıkmaz.
+Tarz sayfalarından gelen `/randevu?stil=<slug>` ön seçimi korunur. Formun üstündeki
+"Yapmadıklarım" bloğu `src/data/limits.ts` doluysa görünür.
 
 ## SEO ve erişilebilirlik
 
@@ -99,6 +119,12 @@ koyduğunuzda akış olduğu gibi çalışır. Yüklenen görseller tarayıcıda
 
 ## Notlar
 
-- İletişim bilgileri, yorumlar ve fiyatlar demo içeriktir.
-- Yasal sayfalar taslaktır; yayına geçmeden önce hukuk danışmanı metinleriyle değiştirilmelidir.
-- Harita, kullanıcı istemeden yüklenmez (OpenStreetMap gömülü çerçevesi, anahtar gerektirmez).
+- WhatsApp numarası gerçektir. Biyografi, kilometre taşları, sosyal hesap adları ve tüm
+  çalışma görselleri hâlâ örnek içeriktir.
+- Site "ben" ve "sen" diliyle konuşur; yeni metin yazarken bu tonu koru.
+- Ana sayfa günde bir yeniden üretilir (`revalidate = 86400`); "Şu aralar" bölümünün son günü
+  geçince push'a gerek kalmadan kaybolması bunun için.
+- Yasal sayfalar taslaktır ve "siz" dilindedir; yayına geçmeden önce hukuk danışmanı
+  metinleriyle değiştirilmelidir.
+- `/studyo` ve `/hediye-karti` kaldırıldı; eski bağlantılar `next.config.ts` ile
+  `/hakkimda` ve `/randevu`'ya kalıcı yönlenir.
