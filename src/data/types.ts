@@ -119,6 +119,25 @@ export interface AftercarePhase {
   items: string[];
 }
 
+/**
+ * "Şu aralar" — Emir'in o dönem canının çektiği iş. Anasayfada tek bir
+ * bölüm olarak çıkar; `until` geçince kendiliğinden kaybolur.
+ */
+export interface Wannado {
+  /** Büyük başlık — birinci tekil, samimi. */
+  title: string;
+  /** Bir-iki cümle: ne, nereye, neden şimdi. */
+  body: string;
+  /** İlgili tarz — "işlerime bak" bağlantısı için. */
+  style?: StyleSlug;
+  /** Fiyat/koşul notu. Rakam yazmak zorunlu değil. */
+  perk?: string;
+  /** Son gün (YYYY-AA-GG). Bu günden sonra bölüm hiç render edilmez. */
+  until: string;
+  /** İsteğe bağlı görsel — eskiz, referans ya da benzer bir iş. */
+  image?: Media;
+}
+
 export interface StudioValue {
   id: string;
   title: string;
