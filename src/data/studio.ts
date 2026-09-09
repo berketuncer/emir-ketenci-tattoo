@@ -8,9 +8,9 @@ import type { StudioValue } from "./types";
 export const studioValues: StudioValue[] = [
   {
     id: "v-01",
-    title: "Tek kullanımlık, önünüzde açılan malzeme",
+    title: "Tek kullanımlık, önünde açılan malzeme",
     description:
-      "İğne, kartuş, eldiven ve bariyerlerin tamamı tek kullanımlıktır ve paketleri seans başında sizin önünüzde açılır. Tekrar kullanılan ekipman yok.",
+      "İğne, kartuş, eldiven ve bariyerlerin tamamı tek kullanımlıktır ve paketleri seans başında senin önünde açılır. Tekrar kullanılan ekipman yok.",
   },
   {
     id: "v-02",
@@ -22,19 +22,19 @@ export const studioValues: StudioValue[] = [
     id: "v-03",
     title: "Onaysız iğne açılmaz",
     description:
-      "Tasarımı randevudan önce görürsünüz, iki revizyon hakkınız vardır. Uygulama günü şablon birlikte denenir; yer ve ölçü onaylanmadan başlanmaz.",
+      "Tasarımı randevudan önce görürsün, iki revizyon hakkın vardır. Uygulama günü şablon birlikte denenir; yer ve ölçü onaylanmadan başlanmaz.",
   },
   {
     id: "v-04",
     title: "Katalog değil, kişiye özel tasarım",
     description:
-      "Duvara asılı hazır desen listem yok. Her çalışma o kişi için çizilir, yalnızca bir kez uygulanır ve çizim size aittir.",
+      "Duvara asılı hazır desen listem yok. Her çalışma o kişi için çizilir, yalnızca bir kez uygulanır ve çizim sana aittir.",
   },
   {
     id: "v-05",
     title: "Günde tek randevu",
     description:
-      "Araya başka iş girmez. Seans acele ettirilmez, istediğiniz an mola verebilirsiniz ve gün sonunda kimse kapıda beklemez.",
+      "Araya başka iş girmez. Seans acele ettirilmez, istediğin an mola verebilirsin ve gün sonunda kimse kapıda beklemez.",
   },
   {
     id: "v-06",

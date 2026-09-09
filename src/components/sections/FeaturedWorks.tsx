@@ -11,7 +11,7 @@ export default function FeaturedWorks() {
         <SectionHeader
           eyebrow="Öne çıkan çalışmalar"
           title="Son dönemde bitirdiklerim"
-          description="Her parça tek bir kişi için çizildi. Detayına bakmak için üzerine dokunun."
+          description="Her parça tek bir kişi için çizildi. Detayına bakmak için üzerine dokun."
           action={
             <Button href="/calismalar" variant="secondary" icon={<ArrowUpRight className="h-4 w-4" />}>
               Tüm portfolyo

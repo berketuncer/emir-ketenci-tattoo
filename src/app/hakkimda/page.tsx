@@ -138,7 +138,7 @@ export default function AboutPage() {
                 <h2 className="type-h3 mt-6 text-bone">Güven, tasarımdan önce gelir.</h2>
                 <p className="type-body mt-4 max-w-md">
                   Dövme geri alınamaz; o yüzden malzeme, yüzey ve süreç konusunda pazarlık yok.
-                  Hepsi önünüzde açılır, önünüzde uygulanır.
+                  Hepsi önünde açılır, önünde uygulanır.
                 </p>
                 <p className="type-body mt-4 max-w-md text-[0.9375rem]">{site.location.note}</p>
               </Reveal>
@@ -264,9 +264,9 @@ export default function AboutPage() {
       <Section spacing="lg" className="border-t border-[var(--hairline)]">
         <div className="container-page">
           <Reveal className="mx-auto max-w-2xl text-center">
-            <h2 className="type-h2 text-bone">Bir fikriniz mi var?</h2>
+            <h2 className="type-h2 text-bone">Bir fikrin mi var?</h2>
             <p className="type-lead mx-auto mt-5 max-w-lg">
-              Ne istediğinizi tam bilmiyor olmanız sorun değil. Anlatın, birlikte çıkaralım —
+              Ne istediğini tam bilmiyor olman sorun değil. Anlat, birlikte çıkaralım —
               {" "}{site.booking.responseTime} dönüyorum.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">

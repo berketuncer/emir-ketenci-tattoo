@@ -51,12 +51,12 @@ const labelOf = (options: ReadonlyArray<{ value: string; label: string }>, value
 
 function validate(values: Values): Errors {
   const errors: Errors = {};
-  if (!values.projectType) errors.projectType = "Ne yaptırmak istediğinizi seçin.";
-  if (values.idea.trim().length < 20) errors.idea = "Fikri biraz daha anlatın — en az 20 karakter.";
-  if (!values.placement) errors.placement = "Bölge seçin.";
-  if (!values.size) errors.size = "Yaklaşık ölçü seçin.";
+  if (!values.projectType) errors.projectType = "Ne yaptırmak istediğini seç.";
+  if (values.idea.trim().length < 20) errors.idea = "Fikri biraz daha anlat — en az 20 karakter.";
+  if (!values.placement) errors.placement = "Bölge seç.";
+  if (!values.size) errors.size = "Yaklaşık ölçü seç.";
   if (!values.palette) errors.palette = "Siyah-gri mi, renkli mi?";
-  if (!values.name.trim()) errors.name = "İsminizi yazın.";
+  if (!values.name.trim()) errors.name = "İsmini yaz.";
   return errors;
 }
 
@@ -168,13 +168,13 @@ export default function BookingForm() {
         </div>
         <h2 className="type-h2 mt-8 text-bone">WhatsApp&apos;ı açtım.</h2>
         <p className="type-lead mt-5 max-w-lg">
-          {values.name.trim() ? `${values.name.trim()}, ` : ""}talebiniz hazır bir mesaj olarak
-          dolduruldu — <strong className="font-medium text-bone">göndermeyi unutmayın</strong>.
+          {values.name.trim() ? `${values.name.trim()}, ` : ""}talebin hazır bir mesaj olarak
+          dolduruldu — <strong className="font-medium text-bone">göndermeyi unutma</strong>.
           Mesaj bana ulaştığında {site.booking.responseTime} dönüyorum.
         </p>
 
         <p className="type-body mt-6 text-[0.875rem]">
-          Aklınızdaki referans görselleri de aynı sohbete ekleyebilirsiniz; tasarımı konuşurken en
+          Aklındaki referans görselleri de aynı sohbete ekleyebilirsin; tasarımı konuşurken en
           çok işime yarayan şey onlar.
         </p>
 
@@ -218,7 +218,7 @@ export default function BookingForm() {
         <div className="flex flex-col gap-12">
           <Group title="Fikir" step="01">
             <RadioCards
-              legend="Ne yaptırmak istiyorsunuz?"
+              legend="Ne yaptırmak istiyorsun?"
               name="projectType"
               options={projectTypes}
               value={values.projectType}
@@ -230,8 +230,8 @@ export default function BookingForm() {
             <TextAreaField
               id="idea"
               name="idea"
-              label="Fikriniz"
-              hint="Net bir fikir gerekmiyor; ne istemediğinizi yazmak bile başlamak için yeterli."
+              label="Fikrin"
+              hint="Net bir fikir gerekmiyor; ne istemediğini yazmak bile başlamak için yeterli."
               required
               maxLength={800}
               placeholder="Bileğime küçük bir kır çiçeği düşünüyorum; annemin bahçesinden bir fotoğraf var elimde…"
@@ -244,7 +244,7 @@ export default function BookingForm() {
               id="style"
               name="style"
               label="Tarz"
-              hint="İsteğe bağlı — emin değilseniz boş bırakın, birlikte karar veririz."
+              hint="İsteğe bağlı — emin değilsen boş bırak, birlikte karar veririz."
               placeholder="Henüz karar vermedim"
               options={styleOptions}
               value={values.style}
@@ -298,11 +298,11 @@ export default function BookingForm() {
             />
           </Group>
 
-          <Group title="Siz ve zamanlama" step="03">
+          <Group title="Sen ve zamanlama" step="03">
             <TextField
               id="name"
               name="name"
-              label="Adınız"
+              label="Adın"
               required
               autoComplete="given-name"
               placeholder="Zeynep"
@@ -312,7 +312,7 @@ export default function BookingForm() {
             />
 
             <RadioCards
-              legend="Daha önce dövme yaptırdınız mı?"
+              legend="Daha önce dövme yaptırdın mı?"
               name="experience"
               hint="İsteğe bağlı — ilk dövmeyse seansı buna göre planlıyorum."
               options={experienceOptions}
@@ -324,7 +324,7 @@ export default function BookingForm() {
             <SelectField
               id="timePreference"
               name="timePreference"
-              label="Ne zaman uygunsunuz?"
+              label="Ne zaman uygunsun?"
               hint="İsteğe bağlı — kesin günü konuşurken belirleriz."
               placeholder="Fark etmez"
               options={timePreferences}
@@ -343,7 +343,7 @@ export default function BookingForm() {
             <ArrowRight className="h-4 w-4" />
           </button>
           <p className="type-body mt-5 max-w-md text-[0.875rem]">
-            Form, yazdıklarınızı hazır bir WhatsApp mesajına çevirir; mesajı siz gönderirsiniz.
+            Form, yazdıklarını hazır bir WhatsApp mesajına çevirir; mesajı sen gönderirsin.
             Sitede hiçbir bilgi saklanmaz.
           </p>
         </div>

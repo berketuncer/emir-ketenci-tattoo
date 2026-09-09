@@ -33,7 +33,7 @@ export default function PricingSummary() {
             ))}
           </ul>
           <Button href={site.booking.href} variant="secondary" icon={<ArrowRight className="h-4 w-4" />}>
-            Fikrinizi yazın, rakamı söyleyeyim
+            Fikrini yaz, rakamı söyleyeyim
           </Button>
         </div>
       </div>

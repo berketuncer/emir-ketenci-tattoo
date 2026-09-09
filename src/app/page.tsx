@@ -19,7 +19,7 @@ export const metadata: Metadata = pageMeta({
   // Kök sayfaya layout başlık şablonu uygulanmadığı için marka adı burada yazılır.
   title: "Emir Ketenci — İstanbul Dövme Stüdyosu",
   description:
-    "Emir Ketenci — İstanbul'da sadece randevuyla çalışan tek kişilik dövme stüdyosu. Fine line, mikro realizm, blackwork ve geometrik çalışmalar; randevu talebi oluşturun.",
+    "Emir Ketenci — İstanbul'da sadece randevuyla çalışan tek kişilik dövme stüdyosu. Fine line, mikro realizm, blackwork ve geometrik çalışmalar; randevu talebi oluştur.",
   path: "/",
 });
 

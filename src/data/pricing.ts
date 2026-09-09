@@ -20,5 +20,5 @@ export const pricingNotes = [
   "Danışma görüşmesi ücretsiz.",
   "Kapora toplam ücretten düşülür.",
   "İlk 12 ay içinde bir kez rötuş ücretsiz.",
-  "Rakam, talebiniz geldikten sonra yazılır; sürprizli ek ücret yok.",
+  "Rakam, talebin geldikten sonra yazılır; sürprizli ek ücret yok.",
 ];

@@ -143,7 +143,7 @@ export function SelectField({
   hint,
   error,
   options,
-  placeholder = "Seçiniz",
+  placeholder = "Seç",
   required,
   id,
   className,

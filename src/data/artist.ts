@@ -13,7 +13,7 @@ export const artist: Artist = {
   bio: [
     "Grafik tasarım okudum, altı yıl illüstrasyon ve kitap kapağı çizdim. 2014'te bir arkadaşımın stüdyosunda çırak olarak başladım; ilk yıl sadece izledim, temizledim ve kâğıt üzerinde çizdim.",
     "2019'dan beri kendi başıma çalışıyorum ve günde tek randevu alıyorum — çünkü bir işi hem tasarlayıp hem uygulamak, arada başka bir işe geçmeden yapılınca daha iyi çıkıyor.",
-    "Her çalışmaya kâğıtla başlarım. Tablet sonra devreye girer. Duvarda hazır desen listem yok; aklınızdaki fikri konuşarak çıkarır, sizin için sıfırdan çizerim.",
+    "Her çalışmaya kâğıtla başlarım. Tablet sonra devreye girer. Duvarda hazır desen listem yok; aklındaki fikri konuşarak çıkarır, senin için sıfırdan çizerim.",
   ],
   focusStyles: ["fine-line", "micro-realism", "blackwork", "geometric"],
   otherStyles: ["minimal", "realism", "abstract", "traditional", "lettering", "custom-design"],
@@ -30,7 +30,7 @@ export const artist: Artist = {
     "Her iş kâğıt üzerinde eskizle başlar, tablet sonra devreye girer.",
     "Tasarım onaylanmadan iğne açılmaz.",
     "Kişiye özel çizilen bir tasarım ikinci bir kişiye uygulanmaz.",
-    "Günde tek randevu; seans acele ettirilmez, istediğiniz an mola verilir.",
+    "Günde tek randevu; seans acele ettirilmez, istediğin an mola verilir.",
     "Kapatma işlerinde mümkün olanı ve olmayanı baştan açıkça söylerim.",
   ],
   milestones: [

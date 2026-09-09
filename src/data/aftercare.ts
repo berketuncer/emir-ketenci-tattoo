@@ -9,10 +9,10 @@ export const aftercarePhases: AftercarePhase[] = [
     window: "0 – 24 saat",
     title: "İlk gün",
     items: [
-      "Kapatma bandını size söylediğim süre boyunca çıkarmayın. Genellikle 2–4 saat, şeffaf film bandında 24 saate kadar.",
-      "Bandı çıkarmadan önce ellerinizi yıkayın. Ilık su ve kokusuz sıvı sabunla nazikçe temizleyin.",
-      "Kurulamak için kâğıt havlu kullanın; sürtmeyin, hafifçe bastırın.",
-      "İnce bir tabaka bakım kremi sürün. Fazlası cildin nefes almasını engeller.",
+      "Kapatma bandını sana söylediğim süre boyunca çıkarma. Genellikle 2–4 saat, şeffaf film bandında 24 saate kadar.",
+      "Bandı çıkarmadan önce ellerini yıka. Ilık su ve kokusuz sıvı sabunla nazikçe temizle.",
+      "Kurulamak için kâğıt havlu kullan; sürtme, hafifçe bastır.",
+      "İnce bir tabaka bakım kremi sür. Fazlası cildin nefes almasını engeller.",
     ],
   },
   {
@@ -20,11 +20,11 @@ export const aftercarePhases: AftercarePhase[] = [
     window: "1 – 7 gün",
     title: "İlk hafta",
     items: [
-      "Günde iki kez temizleyin ve ince bir tabaka krem sürün.",
-      "Kaşınma normaldir. Kaşımayın, kabuğu kaldırmayın — çizgi kaybının en yaygın sebebi budur.",
-      "Havuz, deniz, sauna ve küvet yok. Duş serbest ama uzun süre sıcak suyun altında kalmayın.",
-      "Bölgeyi sıkan kıyafet giymeyin; pamuklu ve bol olanı tercih edin.",
-      "Spora ve terleten aktivitelere birkaç gün ara verin.",
+      "Günde iki kez temizle ve ince bir tabaka krem sür.",
+      "Kaşınma normaldir. Kaşıma, kabuğu kaldırma — çizgi kaybının en yaygın sebebi budur.",
+      "Havuz, deniz, sauna ve küvet yok. Duş serbest ama uzun süre sıcak suyun altında kalma.",
+      "Bölgeyi sıkan kıyafet giyme; pamuklu ve bol olanı tercih et.",
+      "Spora ve terleten aktivitelere birkaç gün ara ver.",
     ],
   },
   {
@@ -33,9 +33,9 @@ export const aftercarePhases: AftercarePhase[] = [
     title: "Soyulma ve oturma",
     items: [
       "Cilt pul pul dökülür, renk geçici olarak mat görünür. Bu normaldir.",
-      "Nemlendirmeye devam edin; artık günde bir kez yeterli.",
-      "Doğrudan güneşe çıkarmayın. Kapalı tutamıyorsanız yüksek faktörlü koruyucu kullanın.",
-      "Dördüncü haftadan sonra dövme oturur; gerçek rengini o zaman görürsünüz.",
+      "Nemlendirmeye devam et; artık günde bir kez yeterli.",
+      "Doğrudan güneşe çıkarma. Kapalı tutamıyorsan yüksek faktörlü koruyucu kullan.",
+      "Dördüncü haftadan sonra dövme oturur; gerçek rengini o zaman görürsün.",
     ],
   },
   {
@@ -43,19 +43,19 @@ export const aftercarePhases: AftercarePhase[] = [
     window: "Sonrası",
     title: "Uzun vadede",
     items: [
-      "Güneş, dövmenin en büyük düşmanıdır. Yaz aylarında düzenli koruyucu kullanın.",
-      "Cildinizi nemli tutun; kuru cilt çizgileri daha çabuk soldurur.",
+      "Güneş, dövmenin en büyük düşmanıdır. Yaz aylarında düzenli koruyucu kullan.",
+      "Cildini nemli tut; kuru cilt çizgileri daha çabuk soldurur.",
       "İnce çizgi ve mikro realizm çalışmalarında zamanla tazeleme gerekebilir.",
-      "İlk 12 ay içinde gereken rötuş için bana yazın — bir kez ücretsizdir.",
+      "İlk 12 ay içinde gereken rötuş için bana yaz — bir kez ücretsizdir.",
     ],
   },
 ];
 
 export const aftercareWarnings = [
-  "Kızarıklık 3 günden uzun sürer, şişlik artar ya da akıntı olursa bana yazın ve bir hekime başvurun.",
+  "Kızarıklık 3 günden uzun sürer, şişlik artar ya da akıntı olursa bana yaz ve bir hekime başvur.",
   "Ateş, yayılan kızarıklık veya artan ağrı normal iyileşmenin parçası değildir.",
-  "Bilinen bir cilt rahatsızlığınız, alerjiniz ya da düzenli kullandığınız bir ilaç varsa randevudan önce bildirin.",
+  "Bilinen bir cilt rahatsızlığın, alerjin ya da düzenli kullandığın bir ilaç varsa randevudan önce bildir.",
 ];
 
 export const aftercareDisclaimer =
-  "Bu sayfa genel bir bakım rehberidir, tıbbi tavsiye yerine geçmez. Size özel verdiğim talimatlar her zaman önceliklidir. Şüphede kaldığınız her durumda bir sağlık kuruluşuna başvurun.";
+  "Bu sayfa genel bir bakım rehberidir, tıbbi tavsiye yerine geçmez. Sana özel verdiğim talimatlar her zaman önceliklidir. Şüphede kaldığın her durumda bir sağlık kuruluşuna başvur.";

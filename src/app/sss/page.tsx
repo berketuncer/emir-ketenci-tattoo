@@ -52,7 +52,7 @@ export default function SssPage() {
         description={
           <>
             Fiyattan iyileşme sürecine kadar en çok sorulan {faqItems.length} soruyu beş başlıkta
-            topladım. Cevaplar kısa ve dürüst; aradığınızı bulamazsanız bir mesaj uzağındayım.
+            topladım. Cevaplar kısa ve dürüst; aradığını bulamazsan bir mesaj uzağındayım.
           </>
         }
       />
@@ -150,7 +150,7 @@ export default function SssPage() {
             <h2 className="type-h2 mt-6 text-bone">Cevabını bulamadın mı?</h2>
             <p className="type-lead mx-auto mt-5 max-w-xl">
               Listede olmayan her soru benim için değerli — çoğu zaman yeni bir başlık olarak buraya
-              ekleniyor. Kısa bir mesaj yazın, sırası gelince cevaplıyorum.
+              ekleniyor. Kısa bir mesaj yaz, sırası gelince cevaplıyorum.
             </p>
 
             <div className="mt-10 flex flex-wrap justify-center gap-3">

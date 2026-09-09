@@ -13,7 +13,7 @@ import { breadcrumbSchema, pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Randevu Talebi",
   description:
-    "Dövme fikrinizi kısa bir formda anlatın, WhatsApp'tan bana gönderin. Talebinizi genelde birkaç gün içinde değerlendirip size özel bir öneri ve fiyat aralığıyla dönüyorum.",
+    "Dövme fikrini kısa bir formda anlat, WhatsApp'tan bana gönder. Talebini genelde birkaç gün içinde değerlendirip sana özel bir öneri ve fiyat aralığıyla dönüyorum.",
   path: "/randevu",
 });
 
@@ -31,7 +31,7 @@ const assurances = [
   {
     Icon: WhatsApp,
     title: "Talep doğrudan telefonuma düşer",
-    text: "Form sizi WhatsApp'a taşır; referans görsellerinizi de aynı sohbete ekleyebilirsiniz.",
+    text: "Form seni WhatsApp'a taşır; referans görsellerini de aynı sohbete ekleyebilirsin.",
   },
 ];
 
@@ -54,11 +54,11 @@ export default function BookingPage() {
         eyebrow="Randevu"
         title={
           <>
-            Fikrinizi anlatın,
+            Fikrini anlat,
             <span className="block italic text-ash">gerisini birlikte çizelim.</span>
           </>
         }
-        description="Üç kısa bölüm, birkaç dakika. Fiyat sormuyorum — rakam ancak fikri, ölçüyü ve bölgeyi gördükten sonra anlamlı oluyor. Yazdıklarınız hazır bir WhatsApp mesajına dönüşür; göndermeden önce dilediğiniz gibi düzenleyebilirsiniz."
+        description="Üç kısa bölüm, birkaç dakika. Fiyat sormuyorum — rakam ancak fikri, ölçüyü ve bölgeyi gördükten sonra anlamlı oluyor. Yazdıkların hazır bir WhatsApp mesajına dönüşür; göndermeden önce dilediğin gibi düzenleyebilirsin."
         crumbs={[{ label: "Ana Sayfa", href: "/" }, { label: "Randevu Talebi" }]}
       />
 
@@ -109,14 +109,14 @@ export default function BookingPage() {
                       WhatsApp · {site.contact.whatsappDisplay}
                     </a>
                     <Link href="/sss" className="text-ash transition-colors hover:text-bone">
-                      Önce sık sorulanlara bakın →
+                      Önce sık sorulanlara bak →
                     </Link>
                   </div>
                 </div>
 
                 <p className="mt-8 text-xs leading-relaxed text-ash-deep">
-                  Form hiçbir bilgiyi sitede saklamaz; yazdıklarınız yalnızca sizin
-                  gönderdiğiniz WhatsApp mesajına dönüşür.
+                  Form hiçbir bilgiyi sitede saklamaz; yazdıkların yalnızca senin
+                  gönderdiğin WhatsApp mesajına dönüşür.
                 </p>
               </Reveal>
             </aside>

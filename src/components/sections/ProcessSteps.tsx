@@ -12,10 +12,10 @@ export default function ProcessSteps({ detailed = false }: { detailed?: boolean 
         <SectionHeader
           eyebrow="Süreç"
           title="Fikirden iyileşmeye, altı adım"
-          description="İlk dövmesini yaptıracak biri için bile sürpriz yok. Her adımda ne olacağını önceden biliyorsunuz."
+          description="İlk dövmesini yaptıracak biri için bile sürpriz yok. Her adımda ne olacağını önceden biliyorsun."
           action={
             <Button href={site.booking.href} icon={<ArrowRight className="h-4 w-4" />}>
-              İlk adımı atın
+              İlk adımı at
             </Button>
           }
         />

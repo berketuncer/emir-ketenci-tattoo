@@ -7,7 +7,7 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Sayfa bulunamadı",
   description:
-    "Aradığınız sayfa taşınmış ya da hiç var olmamış olabilir. Buradan çalışmalara, ekibe ve randevu adımına geçebilirsiniz.",
+    "Aradığın sayfa taşınmış ya da hiç var olmamış olabilir. Buradan çalışmalara, hakkımda sayfasına ve randevu adımına geçebilirsin.",
   robots: { index: false, follow: true },
 };
 
@@ -37,8 +37,8 @@ export default function NotFound() {
             </h1>
 
             <p className="type-lead mt-8 max-w-lg animate-fade-up [animation-delay:160ms]">
-              Aradığınız sayfa taşınmış, adı değişmiş ya da hiç var olmamış olabilir. İz sürmeye
-              devam etmek isterseniz iyi bir başlangıç noktası aşağıda.
+              Aradığın sayfa taşınmış, adı değişmiş ya da hiç var olmamış olabilir. İz sürmeye
+              devam etmek istersen iyi bir başlangıç noktası aşağıda.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3 animate-fade-up [animation-delay:240ms]">
@@ -46,7 +46,7 @@ export default function NotFound() {
                 Ana sayfaya dön
               </Button>
               <Button href="/calismalar" variant="secondary" size="lg">
-                Portfolyoyu görün
+                Portfolyoyu gör
               </Button>
               <Button
                 href={site.booking.href}

@@ -38,7 +38,7 @@ const coverUpExample = coverUpWorks[0];
 
 export const metadata: Metadata = pageMeta({
   title: "Çalışmalar",
-  description: `Emir Ketenci arşivi: ${styles.length} tarzda ${works.length} çalışma. Fine line, mikro realizm, blackwork ve geometrik işleri tarza göre filtreleyip detayına bakın.`,
+  description: `Emir Ketenci arşivi: ${styles.length} tarzda ${works.length} çalışma. Fine line, mikro realizm, blackwork ve geometrik işleri tarza göre filtreleyip detayına bak.`,
   path: "/calismalar",
 });
 
@@ -91,7 +91,7 @@ export default function WorksPage() {
         <div className="container-page">
           <Reveal className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
             <h2 className="type-h3 text-bone">Tüm çalışmalar</h2>
-            <p className="type-eyebrow">Büyütmek için bir çalışmaya dokunun</p>
+            <p className="type-eyebrow">Büyütmek için bir çalışmaya dokun</p>
           </Reveal>
 
           <WorkGallery works={works} filterable pageSize={15} columns="four" className="mt-10" />
@@ -102,8 +102,8 @@ export default function WorksPage() {
         <div className="container-page">
           <SectionHeader
             eyebrow="Sonraki adım"
-            title="Aradığınızı bulamadınız mı?"
-            description="Arşiv yalnızca tamamlanmış işleri gösteriyor. Buradan iki yol çıkıyor: eski bir dövmenin üzerine çalışmak ya da sıfırdan kendi fikrinizi anlatmak."
+            title="Aradığını bulamadın mı?"
+            description="Arşiv yalnızca tamamlanmış işleri gösteriyor. Buradan iki yol çıkıyor: eski bir dövmenin üzerine çalışmak ya da sıfırdan kendi fikrini anlatmak."
           />
 
           <div className="mt-12 grid border border-[var(--hairline)] lg:grid-cols-2">
@@ -113,7 +113,7 @@ export default function WorksPage() {
                 <h3 className="type-h3 mt-5 text-bone">Eski bir dövmenin üzerine</h3>
                 <p className="type-body mt-4 max-w-md">
                   Kapatma işlerinde eski hattı silmeye çalışmak yerine, onu yeni kompozisyonun
-                  parçası yapıyorum. Fotoğrafı gönderin; boyut, koyuluk ve yaş neyin mümkün
+                  parçası yapıyorum. Fotoğrafı gönder; boyut, koyuluk ve yaş neyin mümkün
                   olduğunu birlikte belirlesin.
                 </p>
 
@@ -148,7 +148,7 @@ export default function WorksPage() {
                     variant="secondary"
                     icon={<ArrowUpRight className="h-4 w-4" />}
                   >
-                    Kapatma için talep gönderin
+                    Kapatma için talep gönder
                   </Button>
                 </div>
               </Reveal>
@@ -157,10 +157,10 @@ export default function WorksPage() {
             <div className="p-7 sm:p-10 lg:p-12">
               <Reveal delay={120}>
                 <p className="type-eyebrow">Randevu</p>
-                <h3 className="type-h3 mt-5 text-bone">Aklınızdaki fikir burada yoksa</h3>
+                <h3 className="type-h3 mt-5 text-bone">Aklındaki fikir burada yoksa</h3>
                 <p className="type-body mt-4 max-w-md">
                   Doğrusu da bu: her çalışma sıfırdan çiziliyor, arşivdeki hiçbir tasarım ikinci
-                  kez uygulanmıyor. Fikrinizi yazın, {site.booking.responseTime} size özel bir
+                  kez uygulanmıyor. Fikrini yaz, {site.booking.responseTime} sana özel bir
                   değerlendirmeyle döneyim.
                 </p>
 
@@ -178,7 +178,7 @@ export default function WorksPage() {
                 </div>
 
                 <p className="type-body mt-8 max-w-md text-[0.875rem]">
-                  Hangi tarzın size uyduğundan emin değilseniz{" "}
+                  Hangi tarzın sana uyduğundan emin değilsen{" "}
                   <Link
                     href="/stiller"
                     className="link-underline text-bone decoration-ash-deep underline-offset-4"

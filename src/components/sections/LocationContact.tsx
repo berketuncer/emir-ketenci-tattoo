@@ -9,9 +9,9 @@ const channels = [
 ];
 
 const flow = [
-  "WhatsApp'tan yazıyorsunuz; fikri, ölçüyü ve bölgeyi konuşuyoruz.",
+  "WhatsApp'tan yazıyorsun; fikri, ölçüyü ve bölgeyi konuşuyoruz.",
   "Tasarım onaylanınca kapora ile gün kesinleşiyor.",
-  "Konumu ve gelmeden önce bilmeniz gerekenleri o zaman yazıyorum.",
+  "Konumu ve gelmeden önce bilmen gerekenleri o zaman yazıyorum.",
 ];
 
 /**
@@ -42,8 +42,8 @@ export default function LocationContact() {
                   ))}
                 </ol>
                 <p className="type-body mt-7 text-[0.875rem]">
-                  Telefonla değil, yazarak ilerliyoruz — böylece hiçbir şey unutulmuyor, siz de
-                  istediğiniz saatte yazabiliyorsunuz. {site.booking.responseNote}
+                  Telefonla değil, yazarak ilerliyoruz — böylece hiçbir şey unutulmuyor, sen de
+                  istediğin saatte yazabiliyorsun. {site.booking.responseNote}
                 </p>
               </div>
             </Reveal>

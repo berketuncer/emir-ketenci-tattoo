@@ -197,7 +197,7 @@ export const styles: TattooStyle[] = [
     description: [
       "Lettering, yazının kendisinin tasarım olduğu alandır. El yazısı, serif, gotik ya da tamamen özel çizilmiş harfler.",
       "Yazı dövmelerinde en sık yapılan hata, hazır bir bilgisayar fontunu doğrudan cilde taşımaktır. Her cümleyi elle çizip harflerin arasını bölgeye göre yeniden dengeliyorum.",
-      "Yabancı dilde ya da farklı alfabede bir yazı istiyorsanız, uygulamadan önce anlamını birlikte doğruluyoruz. Yanlış yazılmış bir kelime en pahalı hatadır.",
+      "Yabancı dilde ya da farklı alfabede bir yazı istiyorsan, uygulamadan önce anlamını birlikte doğruluyoruz. Yanlış yazılmış bir kelime en pahalı hatadır.",
     ],
     suitedFor: [
       "Bir isim, tarih ya da cümle taşımak isteyenler",
@@ -215,11 +215,11 @@ export const styles: TattooStyle[] = [
   {
     slug: "custom-design",
     name: "Kişiye Özel Tasarım",
-    tagline: "Sıfırdan, yalnızca sizin için çizilen parça.",
+    tagline: "Sıfırdan, yalnızca senin için çizilen parça.",
     description: [
-      "Aklınızdaki fikir tek bir stile sığmıyorsa, sıfırdan çizerim. Fine line bir botanik forma blackwork bir gölge, geometrik bir çerçeveye realist bir detay eklenebilir.",
-      "Süreç bir görüşmeyle başlar: neyi neden istediğinizi, nereye yaptırmak istediğinizi ve nasıl yaşadığınızı konuşuruz. Tasarım bundan sonra çıkar.",
-      "Özel tasarımlar yalnızca bir kez uygulanır. Çizim size aittir ve başka kimseye çalışmam.",
+      "Aklındaki fikir tek bir stile sığmıyorsa, sıfırdan çizerim. Fine line bir botanik forma blackwork bir gölge, geometrik bir çerçeveye realist bir detay eklenebilir.",
+      "Süreç bir görüşmeyle başlar: neyi neden istediğini, nereye yaptırmak istediğini ve nasıl yaşadığını konuşuruz. Tasarım bundan sonra çıkar.",
+      "Özel tasarımlar yalnızca bir kez uygulanır. Çizim sana aittir ve başka kimseye çalışmam.",
     ],
     suitedFor: [
       "Katalogda karşılığını bulamayan fikirler",

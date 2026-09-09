@@ -17,10 +17,10 @@ export default function Footer() {
           <div>
             <p className="type-eyebrow mb-6">Bir sonraki adım</p>
             <h2 className="type-h2 max-w-xl text-bone">
-              Bir fikriniz mi var? Gerisini birlikte çizelim.
+              Bir fikrin mi var? Gerisini birlikte çizelim.
             </h2>
             <p className="type-body mt-5 max-w-md">
-              Net bir fikriniz olması gerekmiyor. Talebinizi gönderin, {site.booking.responseTime} size özel bir
+              Net bir fikrin olması gerekmiyor. Talebini gönder, {site.booking.responseTime} sana özel bir
               değerlendirmeyle döneyim.
             </p>
           </div>
@@ -147,7 +147,7 @@ export default function Footer() {
         </div>
 
         <p className="pb-10 text-xs leading-relaxed text-ash-deep">
-          Sitedeki çalışma görselleri geçici örnekler; gerçek işler için Instagram&apos;a bakın.
+          Sitedeki çalışma görselleri geçici örnekler; gerçek işler için Instagram&apos;a bak.
         </p>
       </div>
     </footer>

@@ -34,7 +34,7 @@ export default function IletisimPage() {
 
       <PageHero
         eyebrow="İletişim"
-        title="Yazın, sırayla dönüyorum."
+        title="Yaz, sırayla dönüyorum."
         crumbs={[{ label: "Ana sayfa", href: "/" }, { label: "İletişim" }]}
         description={
           <>
@@ -60,7 +60,7 @@ export default function IletisimPage() {
           <SectionHeader
             eyebrow="Sık sorulanlar"
             title="Yazmadan önce"
-            description="Randevu tarafında en çok sorulan dört soru. Gerisi SSS sayfasında — çoğu sorunun cevabı oradadır, yazmadan bir bakın."
+            description="Randevu tarafında en çok sorulan dört soru. Gerisi SSS sayfasında — çoğu sorunun cevabı oradadır, yazmadan bir bak."
             action={
               <Button href="/sss" variant="secondary" icon={<ArrowUpRight className="h-4 w-4" />}>
                 Tüm sorular

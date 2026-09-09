@@ -28,11 +28,11 @@ export default function BookingCta() {
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="type-eyebrow justify-center">Randevu</p>
           <h2 className="type-h1 mt-6 text-bone">
-            Aklınızdaki fikri <span className="italic text-ash">bugün</span> anlatın.
+            Aklındaki fikri <span className="italic text-ash">bugün</span> anlat.
           </h2>
           <p className="type-lead mx-auto mt-6 max-w-xl">
-            Üç kısa bölüm, birkaç dakika. Net bir fikriniz olması gerekmiyor —
-            {" "}{site.booking.responseTime} size özel bir değerlendirmeyle dönüyorum.
+            Üç kısa bölüm, birkaç dakika. Net bir fikrin olması gerekmiyor —
+            {" "}{site.booking.responseTime} sana özel bir değerlendirmeyle dönüyorum.
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">

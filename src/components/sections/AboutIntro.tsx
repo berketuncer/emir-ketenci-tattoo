@@ -43,7 +43,7 @@ export default function AboutIntro() {
               <p className="type-lead mt-6 max-w-xl">{artist.tagline}</p>
               <p className="type-body mt-5 max-w-xl">
                 {years} yıldır dövme yapıyorum, {site.currentYear - site.founded} yıldır kendi başıma. Günde tek
-                randevu alıyorum — gün sizin, araya başka bir iş girmiyor.
+                randevu alıyorum — gün senin, araya başka bir iş girmiyor.
               </p>
 
 

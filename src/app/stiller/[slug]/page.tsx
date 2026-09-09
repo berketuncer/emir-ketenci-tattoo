@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps<"/stiller/[slug]">)
   if (!style) {
     return pageMeta({
       title: "Tarz bulunamadı",
-      description: "Aradığınız tarz sayfası bulunamadı. Tüm dövme tarzlarını listeden inceleyebilirsiniz.",
+      description: "Aradığın tarz sayfası bulunamadı. Tüm dövme tarzlarını listeden inceleyebilirsin.",
       path: "/stiller",
     });
   }
@@ -220,11 +220,11 @@ export default async function StyleDetailPage({ params }: PageProps<"/stiller/[s
                 <p className="type-lead">
                   {isFocus
                     ? `${style.name}, ağırlıklı çalıştığım dört alandan biri. Tasarımdan uygulamaya kadar her adımı tek başıma yürütüyorum; araya kimse girmiyor.`
-                    : `${style.name} işlerini de yapıyorum, ancak ağırlıklı alanlarım fine line, mikro realizm, blackwork ve geometrik. Fikriniz bu tarzda daha iyi çıkacaksa bunu size baştan söylerim.`}
+                    : `${style.name} işlerini de yapıyorum, ancak ağırlıklı alanlarım fine line, mikro realizm, blackwork ve geometrik. Fikrin bu tarzda daha iyi çıkacaksa bunu sana baştan söylerim.`}
                 </p>
                 <p className="type-body mt-5 max-w-xl">
                   Stüdyo tek kişilik ve günde tek randevu alıyorum. Bu yüzden takvim biraz yavaş
-                  ilerliyor ama başladığımız gün tamamen size ayrılıyor.
+                  ilerliyor ama başladığımız gün tamamen sana ayrılıyor.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Button href="/hakkimda" variant="secondary" icon={<ArrowUpRight className="h-4 w-4" />}>
@@ -246,7 +246,7 @@ export default async function StyleDetailPage({ params }: PageProps<"/stiller/[s
           <SectionHeader
             eyebrow="Portfolyo"
             title="Örnek işler"
-            description="Arşivden seçilmiş çalışmalar. Görsele dokunduğunuzda bölge, ölçü ve seans bilgisi açılır."
+            description="Arşivden seçilmiş çalışmalar. Görsele dokunduğunda bölge, ölçü ve seans bilgisi açılır."
             action={
               <Button href="/calismalar" variant="secondary" icon={<ArrowUpRight className="h-4 w-4" />}>
                 Tüm portfolyo
@@ -308,7 +308,7 @@ export default async function StyleDetailPage({ params }: PageProps<"/stiller/[s
               <div>
                 <h2 className="type-h2 text-bone">{style.name} için ilk adım</h2>
                 <p className="type-lead mt-5 max-w-lg">
-                  Formda tarz zaten seçili gelir. Fikrinizi, bölgeyi ve yaklaşık ölçüyü yazmanız yeterli;
+                  Formda tarz zaten seçili gelir. Fikrini, bölgeyi ve yaklaşık ölçüyü yazman yeterli;
                   {site.booking.responseTime} dönüyorum.
                 </p>
               </div>

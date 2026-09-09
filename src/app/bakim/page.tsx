@@ -23,7 +23,7 @@ const quickSummary = [
     window: "İlk 24 saat",
     title: "Kapalı tut, nazikçe yıka",
     points: [
-      "Bandı size söylediğim süreden önce çıkarmayın.",
+      "Bandı sana söylediğim süreden önce çıkarma.",
       "Ilık su ve kokusuz sabunla temizle, kâğıt havluyla bastırarak kurula.",
       "Çok ince bir tabaka krem yeterli.",
     ],
@@ -123,7 +123,7 @@ export default function AftercarePage() {
           <SectionHeader
             eyebrow="Zaman çizelgesi"
             title="İlk günden dördüncü haftaya"
-            description="Her dönemin kendi kuralı var. Sanatçınızın size özel verdiği talimat farklıysa her zaman onu uygulayın."
+            description="Her dönemin kendi kuralı var. Sanatçının sana özel verdiği talimat farklıysa her zaman onu uygula."
           />
 
           <ol className="mt-14">
@@ -235,7 +235,7 @@ export default function AftercarePage() {
             <p className="type-eyebrow">Yardım</p>
             <h2 className="type-h2 mt-6 text-bone">Bir sorun mu var?</h2>
             <p className="type-lead mt-6">
-              İyileşme sırasında aklınıza takılan her şeyi sorabilirsiniz. Bölgenin net bir fotoğrafını
+              İyileşme sırasında aklına takılan her şeyi sorabilirsin. Bölgenin net bir fotoğrafını
               gönder, aynı gün içinde bakalım.
             </p>
 
@@ -266,7 +266,7 @@ export default function AftercarePage() {
               <span aria-hidden className="text-ash-deep">
                 ·
               </span>
-              <span>Yazın, sırayla dönüyorum.</span>
+              <span>Yaz, sırayla dönüyorum.</span>
             </p>
           </Reveal>
         </div>

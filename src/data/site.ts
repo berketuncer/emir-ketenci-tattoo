@@ -62,7 +62,7 @@ export const site = {
   /** Ana menü. */
   nav: [
     { label: "Çalışmalar", href: "/calismalar", description: "Portfolyo ve tarz filtreleri" },
-    { label: "Stiller", href: "/stiller", description: "Hangi tarz size uygun?" },
+    { label: "Stiller", href: "/stiller", description: "Hangi tarz sana uygun?" },
     { label: "Hakkımda", href: "/hakkimda", description: "Kimim, nasıl çalışıyorum" },
     { label: "SSS", href: "/sss", description: "Sık sorulan sorular" },
     { label: "İletişim", href: "/iletisim", description: "WhatsApp ve Instagram" },
@@ -87,7 +87,7 @@ export const site = {
     /** Dönüş süresi — az vaat edilir, tutulur. Formda ve CTA'larda kullanılır. */
     responseTime: "genelde birkaç gün içinde",
     /** Beklentiyi samimi kuran tek cümle. */
-    responseNote: "Mesajlara toplu bakıyorum; hemen dönemezsem unutmuş değilim, sıradasınız.",
+    responseNote: "Mesajlara toplu bakıyorum; hemen dönemezsem unutmuş değilim, sıradasın.",
     depositNote: "Randevu, tasarım onayından sonra alınan kapora ile kesinleşir.",
   },
 

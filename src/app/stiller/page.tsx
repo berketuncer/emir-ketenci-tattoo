@@ -16,24 +16,24 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Dövme Tarzları",
   description:
-    "Fine line, blackwork, realizm, geometrik ve daha fazlası. Her tarzın kimlere uyduğunu, tipik seans süresini ve arşivimizdeki çalışma sayısını tek listede karşılaştırın.",
+    "Fine line, blackwork, realizm, geometrik ve daha fazlası. Her tarzın kimlere uyduğunu, tipik seans süresini ve arşivimizdeki çalışma sayısını tek listede karşılaştır.",
   path: "/stiller",
 });
 
 /** Ne istediğini bilmeyen ziyaretçiyi doğru tarza yönlendiren kısayollar. */
 const guides: { question: string; answer: string; slug: StyleSlug }[] = [
   {
-    question: "İlk dövmeniz mi?",
-    answer: "İnce çizgiyle küçük başlayın. Kısa seans, kolay iyileşme, sonradan büyütülebilir bir başlangıç.",
+    question: "İlk dövmen mi?",
+    answer: "İnce çizgiyle küçük başla. Kısa seans, kolay iyileşme, sonradan büyütülebilir bir başlangıç.",
     slug: "fine-line",
   },
   {
-    question: "Eski bir dövmeyi mi kapatacaksınız?",
+    question: "Eski bir dövmeyi mi kapatacaksın?",
     answer: "Yoğun siyah, altındaki hattı yeni bir kompozisyonun parçası haline getirir.",
     slug: "blackwork",
   },
   {
-    question: "Elinizde bir fotoğraf mı var?",
+    question: "Elinde bir fotoğraf mı var?",
     answer: "Referans netse, ışık ve gölge ton geçişleriyle birebir kurulur.",
     slug: "realism",
   },
@@ -46,9 +46,9 @@ export default function StylesPage() {
     <>
       <PageHero
         eyebrow="Tarzlar"
-        title="Hangi tarz size uyar?"
+        title="Hangi tarz sana uyar?"
         crumbs={[{ label: "Ana sayfa", href: "/" }, { label: "Tarzlar" }]}
-        description="Tarz seçimi, dövmenin yıllar sonra nasıl görüneceğini belirleyen ilk karar. Aşağıdaki listede her tarzın kime uygun olduğunu, ne kadar sürdüğünü ve arşivimizde kaç çalışması bulunduğunu yan yana görebilirsiniz."
+        description="Tarz seçimi, dövmenin yıllar sonra nasıl görüneceğini belirleyen ilk karar. Aşağıdaki listede her tarzın kime uygun olduğunu, ne kadar sürdüğünü ve arşivimizde kaç çalışması bulunduğunu yan yana görebilirsin."
         actions={
           <>
             <Button href={site.booking.href} icon={<ArrowRight className="h-4 w-4" />}>
@@ -66,10 +66,10 @@ export default function StylesPage() {
         <div className="container-page">
           <Reveal>
             <h2 id="baslangic" className="type-h3 max-w-md text-bone">
-              Ne istediğinizi bilmiyorsanız
+              Ne istediğini bilmiyorsan
             </h2>
             <p className="type-body mt-3 max-w-lg text-[0.9375rem]">
-              Çoğu görüşme şu üç sorudan biriyle başlıyor. Size en yakın olanı seçin, oradan devam edelim.
+              Çoğu görüşme şu üç sorudan biriyle başlıyor. Sana en yakın olanı seç, oradan devam edelim.
             </p>
           </Reveal>
 
@@ -174,7 +174,7 @@ export default function StylesPage() {
 
           <Reveal className="mt-12 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="type-body max-w-lg text-[0.9375rem]">
-              Listede karşılığını bulamadıysanız sorun değil. Fikrinizi anlatın, hangi tarzın taşıyacağını
+              Listede karşılığını bulamadıysan sorun değil. Fikrini anlat, hangi tarzın taşıyacağını
               birlikte bulalım.
             </p>
             <Button
@@ -183,7 +183,7 @@ export default function StylesPage() {
               className="shrink-0"
               icon={<ArrowRight className="h-4 w-4" />}
             >
-              Fikrinizi anlatın
+              Fikrini anlat
             </Button>
           </Reveal>
         </div>

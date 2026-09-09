@@ -92,7 +92,7 @@ export default function WorkGallery({
         <div className="border border-dashed border-[var(--hairline-strong)] px-6 py-20 text-center">
           <p className="type-h3 text-bone">Bu tarzda henüz paylaşılmış iş yok.</p>
           <p className="type-body mx-auto mt-3 max-w-md">
-            Arşivimde var ama sayfaya henüz eklemedim. Aklınızdaki fikri yazın, benzer çalışmalarımı
+            Arşivimde var ama sayfaya henüz eklemedim. Aklındaki fikri yaz, benzer çalışmalarımı
             doğrudan göndereyim.
           </p>
           <button
